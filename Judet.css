@@ -1,0 +1,134 @@
+body{
+    background-color: rgb(218, 217, 211);
+}
+
+h1{
+    text-align: center;
+    margin-top: 5vh;
+    letter-spacing: 10px;
+    color: rgb(21, 90, 151);
+}
+
+.jud_prop{
+    display: block;
+    margin-top: 10vh;
+    margin-left: 30px;
+    width: 40%;
+}
+
+.responsive_img{
+    height: auto;
+    width: 100%;
+}
+
+#hover_img:hover {
+    box-shadow: 0 0 2px 1px rgba(7, 103, 134, 0.5);
+  }
+
+.reg_prop{
+    position: absolute;
+    width: 10vw;
+    height: auto;
+    top: 15vh;
+    left: 84vw;  
+    border-radius: 1px; 
+    filter: grayscale(100%);
+}
+
+.tara_prop{
+    position: absolute;
+    width: 10vw;
+    height: auto;
+    top: 30vh;
+    left: 84vw;
+    border-radius: 1px; 
+    padding: 3px;
+}
+
+/*.pieContainer{
+    height: 150px;
+    position: relative;
+}
+
+.pieBackground{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.5);
+}
+
+.pie{
+    transition: all 2s;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border-radius: 100%;
+    clip: rect(0px, 75px, 150px, 0px);
+}
+
+.hold {
+    position: absolute;
+    width: 150px;
+
+    height: 150px;
+    border-radius: 100%;
+    clip: rect(0px, 150px, 150px, 75px);
+  }
+  
+  #pieSlice1 {
+    transform: rotate(30deg);
+  }
+  
+  #pieSlice1 .pie {
+    background-color: #0a0;
+    transform: rotate(60deg);
+  }
+  
+  #pieSlice2 {
+    transform: rotate(90deg);
+  }
+  
+  #pieSlice2 .pie {
+    background-color: #f80;
+    transform: rotate(120deg);
+  }*/
+
+@keyframes fillup{
+    from{stroke-dasharray: 0 100;}
+    to{
+        stroke-dasharray: 5 100;
+    }
+}
+
+  svg {
+    width: 20%; 
+    height: auto;
+    transform: rotate(-90deg);
+    background: rgb(83, 83, 133);
+    border-radius: 50%;
+  }
+  
+  circle {
+    fill: rgb(83, 83, 133);
+    stroke: rgb(206, 123, 206);
+    stroke-width: 32;
+    stroke-dasharray: 5 100;
+    animation-duration: 2s;
+    animation-name: fillup;
+  }
+
+  .pie_position{
+    margin: 0;
+    position: absolute;
+    top: 20vh;
+    left: 53vw;
+  }
+
+  .pieLegend li span{
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin-right: 5px;
+  }
