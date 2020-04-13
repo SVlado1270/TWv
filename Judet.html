@@ -4,38 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Judet.css">
+    <link rel="stylesheet" type="text/css" href="grid.css">
     <title>Judetul Iasi</title>
 </head>
 
 <body>
-    <h1>JUDETUL IASI</h1>
-    <div class="responsive_img">
-        <img src="Jud_Iasi.png" alt="Iasi" class="jud_prop" /></div>
-    <div class="column">
-        <a href="Regiune.html">
-            <img id="hover_img" src="Reg_Moldova.png" alt="Moldova" class="reg_prop" />
-        </a>
-        <a href="index.html">
-            <img id="hover_img" src="RomaniaFull.png" alt="Romania" class="tara_prop" />
-        </a>
-    </div>
-
-    <!--<div class="pieContainer">
-        <div class="pieBackground"></div>
-        <div id="pieSlice1" class="hold">
-            <div class="pie"></div>
+    <div class="wrapper">
+        <div class="header">
+            <h1>Judetul Iasi</h1>
         </div>
-        <div id="pieSlice2" class="hold">
-            <div class="pie"></div>
+        <div class="map-content">
+            <img src="Jud_Iasi.png" alt="Iasi" class="jud_prop" />
         </div>
-    </div> -->
-   <div id="pie_legend" class="pieLegend">
-    <svg viewBox="0 0 32 32" class="pie_position">
-        <circle r="16" cx="16" cy="16" />
-      </svg>
-    </div>
-
+        <div class="chart-content">
+            <div id="pie_legend" class="pieLegend">
+                <svg viewBox="0 0 32 32" class="pie_position">
+                    <circle r="16" cx="16" cy="16" />
+                </svg>
+            </div>
+            <h2>Criterii de filtrare</h2>
+            <label class="container">Varsta
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Sex
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Studii
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <div class="sidebar">
+            <a href="Regiune.html">
+                <img id="hover_img" src="Reg_Moldova.png" alt="Moldova" class="reg_prop" />
+            </a>
+            <a href="index.html">
+                <img id="hover_img" src="RomaniaFull.png" alt="Romania" class="tara_prop" />
+            </a>
+        </div>
 </body>
 
 </html>
