@@ -1,31 +1,32 @@
-body{
+body {
     background-color: #847bd1;
 }
 
-.grid-container{
+.grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto;
 }
 
-.header{
+.header {
     grid-area: hd;
     grid-column: 1/10;
     grid-row: 1/1;
 }
 
-.sidebar{
+.sidebar {
     grid-area: sb;
     grid-column: 9/10;
-    padding: 7px;
+    padding: 10px;
 }
 
-.map-content{
+.map-content {
     grid-area: map;
     grid-column: 1/6;
     grid-row: 2/8;
+    display: flex; justify-content: center;
 }
 
-.chart-content{
+.chart-content {
     grid-area: charts;
     grid-column: 6/9;
     grid-row: 2/8;
@@ -35,13 +36,11 @@ body{
     box-sizing: border-box;
 }
 
-.wrapper{
+.wrapper {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-auto-rows: auto;
-    grid-template-areas:
-        "hd"
-        "map charts sb";
+    grid-template-areas: "hd" "map charts sb";
     border-radius: 3px;
     background-color: #847bd1;
     width: 98vw;
@@ -50,7 +49,7 @@ body{
     grid-gap: 10px;
 }
 
-.wrapper > div {
+.wrapper>div {
     border: 2px solid rgba(70, 20, 209, 0.5);
     border-radius: 5px;
     background-color: rgba(186, 180, 248, 0.7);
@@ -59,11 +58,197 @@ body{
     float: left;
 }
 
-
-h1{
+h1 {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
     margin-top: 5vh;
     letter-spacing: 8px;
     color: rgb(12, 74, 129);
+}
+
+.jud_prop {
+    grid-area: map;
+}
+
+.responsive_img {
+    height: auto;
+    width: 100%;
+}
+
+#hover_img:hover {
+    box-shadow: 0 0 2px 1px rgba(7, 103, 134, 0.5);
+}
+
+.reg_prop {
+    grid-area: sb;
+    width: 8vw;
+    height: auto;
+    top: 15vh;
+    left: 84vw;
+    border-radius: 1px;
+    filter: grayscale(100%);
+    padding: 0;
+    margin-top: 30px;
+}
+
+.tara_prop {
+    grid-area: sb;
+    width: 10vw;
+    height: auto;
+    top: 40vh;
+    left: 80vw;
+    border-radius: 1px;
+    padding: 0;
+    margin-top: 30px;
+}
+
+@keyframes fillup {
+    from {
+        stroke-dasharray: 0 100;
+    }
+    to {
+        stroke-dasharray: 5 100;
+    }
+}
+
+svg {
+    width: 40%;
+    height: auto;
+    transform: rotate(-90deg);
+    background: rgb(83, 83, 133);
+    border-radius: 50%;
+    align-self: center;
+}
+
+circle {
+    fill: rgb(83, 83, 133);
+    stroke: rgb(206, 123, 206);
+    stroke-width: 32;
+    stroke-dasharray: 5 100;
+    animation-duration: 2s;
+    animation-name: fillup;
+}
+
+.pie_position {
+    margin-top: 18vh;
+    margin-right: 10vw;
+    margin-left: 10vw;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color: rgb(20, 86, 145);
+    margin-top: 40px;
+}
+
+.container {
+    display: block;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    margin-left: 20%;
+    font-weight: bold;
+    color: rgb(20, 86, 145);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container input {
+    position: absolute;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+}
+
+.container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+.container input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    display: charts;
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/* INCERCAM UN DROPDOWN COOL SA ZICEM@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+.imagine {
+    width: 100%;
+    filter: grayscale(100%);
+    grid-area: sb;
+}
+
+.harta_hover {
+    grid-area: sb;
+    width: 8vw;
+    height: auto;
+    top: 15vh;
+    left: 84vw;
+    border-radius: 1px;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.dropdown-menu {
+    justify-content: space-around;
+    grid-area: sb;
+}
+
+.drop-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(12, 74, 129);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.drop-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.drop-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown-menu:hover .drop-content {
+    display: block;
 }

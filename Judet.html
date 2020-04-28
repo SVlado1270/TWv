@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="grid.css">
+    <link rel="stylesheet" type="text/css" href="Judet.css">
+    <script type="module" src="databaseconn.mjs"></script>
     <title>Judetul Iasi</title>
 </head>
 
@@ -17,12 +18,16 @@
             <img src="Jud_Iasi.png" alt="Iasi" class="jud_prop" />
         </div>
         <div class="chart-content">
-            <div id="pie_legend" class="pieLegend">
-                <svg viewBox="0 0 32 32" class="pie_position">
-                    <circle r="16" cx="16" cy="16" />
-                </svg>
+            <div id="pie_legend" class="pie_position">
+                <!--<p>Statistici</p>-->
+                <ul>
+                    <li><object width="120%" height="120%" data="./BarChart.html"></object></li>
+                    <li><object width="120%" height="120%" data="./LineChart.html"></object></li>
+                    <li><object width="120%" height="120%" data="./RadarChart.html"></object></li>
+                    <li><object width="120%" height="120%" data="./LineChart.html"></object></li>
+                </ul>
             </div>
-            <h2>Criterii de filtrare</h2>
+            <!-- <h2>Criterii de filtrare</h2>
             <label class="container">Varsta
                 <input type="checkbox" checked="checked">
                 <span class="checkmark"></span>
@@ -34,7 +39,7 @@
             <label class="container">Studii
                 <input type="checkbox">
                 <span class="checkmark"></span>
-            </label>
+            </label>-->
         </div>
         <div class="sidebar">
             <a href="Regiune.html">
@@ -44,6 +49,7 @@
                 <img id="hover_img" src="RomaniaFull.png" alt="Romania" class="tara_prop" />
             </a>
         </div>
+    </div>
 </body>
 
 </html>

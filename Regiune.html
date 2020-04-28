@@ -11,16 +11,49 @@
 <body>
     <div class="wrapper">
         <div class="header">
-            <h1>Moldova</h1>
+            <h1>Regiunea Nord-Est</h1>
         </div>
         <div class="map-content">
-            <!--<img src="Reg_Moldova.png" alt="Moldova" class="reg_prop" />-->
+            <img src="Nord-Est.svg" alt="Iasi" class="jud_prop svg" />
         </div>
-        <div class="chart-content"></div>
+        <div class="chart-content">
+            <div id="pie_legend" class="pieLegend">
+                <svg viewBox="0 0 32 32" class="pie_position">
+                    <circle r="16" cx="16" cy="16" />
+                </svg>
+            </div>
+            <h2>Criterii de filtrare</h2>
+            <label class="container">Varsta
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Sex
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Studii
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+        </div>
         <div class="sidebar">
-            <!--<a href="index.html">
+            <a href="index.html">
                 <img id="hover_img" src="RomaniaFull.png" alt="Romania" class="tara_prop" />
-            </a>-->
+            </a>
+
+            <div class="dropdown-menu ">
+                <div class="harta_hover">
+                    <img id="hover_img" src="Reg_Moldova.png" alt="Moldova" class="imagine" />
+                    <div class="drop-content">
+                        <a href='#'>Iasi</a>
+                        <a href='#'>Bacau</a>
+                        <a href='#'>Botosani</a>
+                        <a href='#'>Neamt</a>
+                        <a href='#'>Suceava</a>
+                        <a href='#'>Vaslui</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
