@@ -11,42 +11,30 @@
 
 <body>
     <div class="wrapper">
-        <div class="header">
-            <h1>Judetul Iasi</h1>
+        <div class="header" style="background-color: #8c7ce933;">
+            <h1>Jude&tcedil;ul Ia&scedil;i</h1>
         </div>
         <div class="map-content">
-            <img src="./misc/Jud_Iasi.png" alt="Iasi" class="jud_prop" />
+            <img src="./misc/Jud_Iasi.png" alt="Iasi" class="jud_prop" style="filter: sepia();" />
         </div>
         <div class="chart-content">
             <div id="pie_legend" class="pie_position">
-                <!--<p>Statistici</p>-->
+                <h2>Vizualizare statistici</h2>
                 <ul>
-                    <li><object width="120%" height="120%" data="./BarChart.html"></object></li>
-                    <li><object width="120%" height="120%" data="./LineChart.html"></object></li>
-                    <li><object width="120%" height="120%" data="./RadarChart.html"></object></li>
-                    <li><object width="120%" height="120%" data="./LineChart.html"></object></li>
+                    <!--procentele nu sunt supported de HTML5, desi pt noi vor functiona-->
+                    <li><object width="800px" height="350px" data="./BarChart.html"></object></li>
+                    <li><object width="800px" height="350px" data="./LineChart.html"></object></li>
+                    <li><object width="800px" height="350px" data="./RadarChart.html"></object></li>
+                    <li><object width="800px" height="350px" data="./LineChart.html"></object></li>
                 </ul>
             </div>
-            <!-- <h2>Criterii de filtrare</h2>
-            <label class="container">Varsta
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">Sex
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">Studii
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>-->
         </div>
-        <div class="sidebar">
+        <div class="sidebar" style="background-color: #7c83e92f;">
             <a href="Regiune.html">
                 <img id="hover_img" src="./misc/Reg_Moldova.png" alt="Moldova" class="reg_prop" />
             </a>
             <a href="index.html">
-                <img id="hover_img" src="./misc/RomaniaFull.png" alt="Romania" class="tara_prop" />
+                <img id="hover_img" src="./misc/RomaniaFull.png" alt="Romania" class="tara_prop" style="filter: sepia();" />
             </a>
         </div>
     </div>

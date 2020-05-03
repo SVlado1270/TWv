@@ -11,8 +11,8 @@
 </head>
 
 <body>
-    <div id="container" style="width: 75%;">
-        <canvas id="myChart" style="display: block; height: 600px; width: 1140px;"></canvas></div>
+    <div class="container">
+        <canvas id="myChart" style="grid-area: chart; width: 30%; height: 90%;"></canvas></div>
     <script>
         var ctx = document.getElementById('myChart').getContext('2d')
         var LUNI = ['Ianuarie', 'Februarie', 'Martie', 'Aprilie']
@@ -37,7 +37,7 @@
                 labels: LUNI,
                 datasets: [{
                     label: 'Varsta',
-                    backgroundColor: 'darkblue',
+                    backgroundColor: 'rgb(200, 166, 255)',
                     borderColor: 'whitesmoke',
                     data: [0, 5, 10, 20, 30, 0]
                 }],

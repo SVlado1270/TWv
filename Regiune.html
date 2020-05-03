@@ -10,43 +10,35 @@
 
 <body>
     <div class="wrapper">
-        <div class="header">
+        <div class="header" style="background-color: #8c7ce92a;">
             <h1>Regiunea Nord-Est</h1>
         </div>
 
         <div class="map-content">
-            <img src="./misc/Nord-Est.svg" alt="Regiunea NE" class="jud_prop" />
+            <img src="./misc/Nord-Est.svg" alt="Regiunea NE" class="jud_prop"/>
         </div>
 
         <div class="chart-content">
-            <div id="pie_legend" class="pieLegend">
-                <svg viewBox="0 0 32 32" class="pie_position">
-                    <circle r="16" cx="16" cy="16" />
-                </svg>
+            <div id="pie_legend" class="pie_position">
+                <h2>Vizualizare statistici</h2>
+                <ul>
+                    <!--procentele nu sunt supported de HTML5, desi pt noi vor functiona-->
+                    <li><object width="800px" height="350px" data="./BarChart.html"></object></li>
+                    <li><object width="800px" height="350px" data="./LineChart.html"></object></li>
+                    <li><object width="800px" height="350px" data="./RadarChart.html"></object></li>
+                    <li><object width="800px" height="350px" data="./LineChart.html"></object></li>
+                </ul>
             </div>
-            <h2>Criterii de filtrare</h2>
-            <label class="container">Varsta
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">Sex
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">Studii
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
         </div>
-        <div class="sidebar">
+        <div class="sidebar" style="background-color: #8c7ce92a;">
 
             <a href="index.html">
-                <img id="hover_img" src="./misc/RomaniaFull.png" alt="Romania" class="tara_prop" />
+                <img id="hover_img" src="./misc/RomaniaFull.png" alt="Romania" class="tara_prop" style="filter: sepia();"/>
             </a>
 
             <div class="dropdown-menu">
                 <div class="harta_hover">
-                    <img id="hover_img" src="./misc/Reg_Moldova.png" alt="Moldova" class="imagine" />
+                    <img id="hover_img" src="./misc/Reg_Moldova.png" alt="Moldova" class="imagine"/>
 
                     <div class="drop-content">
                         <a href='#'>Iasi</a>

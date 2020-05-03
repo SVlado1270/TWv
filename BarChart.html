@@ -11,11 +11,11 @@
 </head>
 
 <body>
-    <div id="container" style="width: 75%;">
-        <canvas id="myChart" style="display: block; height: 570px; width: 1140px;"></canvas></div>
+    <div class="container">
+    <canvas id="myChart" style="grid-area: chart; width: 20%; height: 50%;"></canvas>
     <button id="varsta">Dupa varsta</button>
     <button id="sex">Dupa sex</button>
-    <button id="educatie">Dupa educatie</button>
+    <button id="educatie">Dupa educatie</button></div>
     <script>
         var ctx = document.getElementById('myChart').getContext('2d')
         var LUNI = ['Ianuarie', 'Februarie', 'Martie', 'Aprilie']
@@ -40,9 +40,9 @@
                 labels: LUNI,
                 datasets: [{
                     label: 'Varsta',
-                    backgroundColor: 'darkblue',
+                    backgroundColor: 'rgb(113, 166, 260)',
                     borderColor: 'whitesmoke',
-                    data: [0, 5, 10, 20, 30, 0]
+                    data: [8, 10, 20, 25, 18, 5]
                 }],
                /* DATELE CONCRETE CAND PUNEM DIN DB SI NU DUMMY VALUES 
                labels: LUNI,

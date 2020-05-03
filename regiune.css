@@ -1,5 +1,6 @@
-body {
-    background-color: #847bd1;
+body{
+    /*background-color:  rgb(230, 222, 210);*/
+    background-color: #fff3f3;
 }
 
 .grid-container {
@@ -21,16 +22,20 @@ body {
 
 .map-content {
     grid-area: map;
-    grid-column: 1/6;
+    grid-column: 1/5;
     grid-row: 2/8;
     display: flex;
     justify-content: center;
 }
 
-.chart-content {
+.chart-content{
     grid-area: charts;
-    grid-column: 6/9;
+    grid-column: 5/9;
     grid-row: 2/8;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
 * {
@@ -43,29 +48,40 @@ body {
     grid-auto-rows: auto;
     grid-template-areas: "hd" "map charts sb";
     border-radius: 3px;
-    background-color: #847bd1;
+    background-color:#fff3f3;
     width: 98vw;
     height: 96vh;
     margin: 0 auto;
     grid-gap: 10px;
 }
 
-.wrapper>div {
-    border: 2px solid rgba(70, 20, 209, 0.5);
-    border-radius: 5px;
-    background-color: rgba(186, 180, 248, 0.7);
+
+.wrapper > div {
+    border-radius: 6px;
+    background-color: #8c75de46;
     padding: 1em;
     color: #fcefeb;
     float: left;
 }
 
-h1 {
-    font-family: 'Courier New', Courier, monospace;
+h1{
+    font-family: serif;
     text-align: center;
     margin-top: 5vh;
     letter-spacing: 8px;
-    color: rgb(12, 74, 129);
+    color: rgba(36, 37, 102, 0.815);
+    font-size: 5vh;
 }
+
+h2{
+    font-family: serif;
+    text-align: center;
+    letter-spacing: 6px;
+    color: rgba(36, 37, 102, 0.815);
+    position: center;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+  }
 
 .jud_prop {
     grid-area: map;
@@ -90,7 +106,6 @@ h1 {
     top: 15vh;
     left: 84vw;
     border-radius: 1px;
-    filter: grayscale(100%);
     padding: 0;
     margin-top: 30px;
 }
@@ -103,17 +118,29 @@ h1 {
     left: 80vw;
 }
 
-.pie_position {
-    margin-top: 18vh;
-    margin-right: 10vw;
-    margin-left: 10vw;
+.pie_position{
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: -17px;
+    overflow-y: scroll;  
+    overflow-x: hidden;
+    align-self: center;
+    margin-left: 4vw;
+    margin-top: 30px;
+  }
+
+li{
+  margin-bottom: 105px;
 }
 
-h2 {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    color: rgb(20, 86, 145);
-    margin-top: 40px;
+li:first-child{
+  margin-top: 30px;
+}
+
+ul {
+    list-style-type: none;
 }
 
 .container {
@@ -183,7 +210,7 @@ h2 {
 
 .imagine {
     width: 100%;
-    filter: grayscale(100%);
+    filter: grayscale(90%);
     grid-area: sb;
 }
 
@@ -206,7 +233,7 @@ h2 {
 .drop-content {
     display: none;
     position: absolute;
-    background-color: rgb(12, 74, 129);
+    background-color: rgb(113, 166, 260);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
