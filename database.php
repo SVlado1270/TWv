@@ -20,11 +20,11 @@
         foreach($result as $row) {
           //echo "Judetul este: " . $row["JUDET"]. "<br>";
           $output[] = $row;
-          echo json_encode($output);
         }
       } else {
         //echo "No match found for your query!";
         die("Issue with your connection found". mysqli_error($connection));
       }
       $conn->close();
+      echo json_encode($output);
 ?>
