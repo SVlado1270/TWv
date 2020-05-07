@@ -12,7 +12,7 @@
 
       $criterion = "IASI";
       //$sqlQuery = "SELECT `numar total someri` FROM rata_mai WHERE JUDET = '" . $criterion . "'";
-      $sqlQuery = "SELECT COUNT(`numar total someri`) FROM rata_mai";
+      $sqlQuery = "SELECT judet FROM rata_mai";
       $output = array();
       $result = $conn->query($sqlQuery);
       

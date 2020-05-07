@@ -13,7 +13,7 @@ connection.connect(function (err) {
   }
   console.log('Connection established')
 })
-
+// connect to the server
 const judet = 'IASI'
 const sqlquery = 'SELECT `numar total someri` FROM rata_mai WHERE JUDET= ' + mysql.escape(judet)
 connection.query(sqlquery, (error, results, fields) => {
