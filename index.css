@@ -17,6 +17,9 @@ body{
     grid-area: map;
     grid-column: 1/6;
     grid-row: 2/8;
+    display: flex;
+    justify-content: center;
+    vertical-align: center;
 }
 
 .chart-content{
@@ -59,4 +62,45 @@ h1{
     letter-spacing: 8px;
     color: rgba(36, 37, 102, 0.815);
     font-size: 5vh;
+}
+
+.tara_prop {
+    position: relative;
+    width: 80%;
+    margin-top: 40px;
+}
+
+/*pentru telefon, mai trb adaptare pt rezolutii mici pt tableta/PC*/
+@media only screen and (min-width: 350px) and (max-width: 700px) {
+   .tara_prop {
+       margin-top: 8vh;
+       margin-left: 6vw;
+       width: 80%;
+   }
+
+   .header{
+    grid-area: hd;
+    grid-column: 2/8;
+    grid-row: 1/1;
+   }
+
+   .map-content{
+    grid-area: map;
+    grid-column: 2/8;
+    grid-row: 2/6;
+    }
+
+    .chart-content{
+        grid-area: charts;
+        grid-column: 2/8;
+        grid-row: 6/10;
+    }
+
+   .wrapper {
+    grid-template-areas:
+        "hd"
+        "map" 
+        "charts";
+   }
+
 }

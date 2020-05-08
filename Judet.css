@@ -110,7 +110,19 @@ h2{
     border-radius: 1px; 
     filter: grayscale(95%);
     padding: 0;
-    margin-top: 30px;
+}
+
+.tara_sb{
+  display: block;
+  grid-area: sb;
+  width: 8vw;
+  height: auto;
+  top: 14vh;
+  left: 84vw;  
+  border-radius: 1px; 
+  filter: grayscale(95%);
+  padding: 0;
+  margin-top: 30px;
 }
 
 .tara_prop{
@@ -234,3 +246,94 @@ ul {
     transform: rotate(45deg);
   }
 
+  @media only screen and (min-width: 350px) and (max-width: 700px) and (orientation : landscape) {
+    .tara_prop {
+        margin-top: 5vh;
+        margin-left: 6vw;
+        width: 80%;
+    }
+
+    .header{
+      grid-area: hd;
+      grid-column: 2/8;
+      grid-row: 1/1;
+    }
+
+    .map-content{
+     grid-area: map;
+     grid-column: 2/8;
+     grid-row: 2/6;
+     }
+ 
+     .chart-content{
+         grid-area: charts;
+         grid-column: 2/8;
+         grid-row: 6/10;
+     }
+ 
+    .wrapper {
+     grid-template-areas:
+         "hd sb"
+         "map" 
+         "charts";
+    }
+
+    .sidebar{
+      position: fixed;
+      grid-area: sb;
+      grid-column: 7/7;
+      right: 0px;
+  }
+ 
+ }
+
+ @media only screen and (min-width: 350px) and (max-width: 700px) and (orientation : portrait) {
+  .tara_prop {
+      margin-top: 5vh;
+      margin-left: 6vw;
+      width: 80%;
+  }
+
+  .header{
+    grid-area: hd;
+    grid-column: 2/8;
+    grid-row: 1/1;
+  }
+
+  .map-content{
+   grid-area: map;
+   grid-column: 2/8;
+   grid-row: 2/6;
+   }
+
+   .chart-content{
+       grid-area: charts;
+       grid-column: 2/8;
+       grid-row: 6/10;
+   }
+
+  .wrapper {
+   grid-template-areas:
+       "hd sb"
+       "map" 
+       "charts";
+  }
+
+  .sidebar{
+    position: fixed;
+    grid-area: sb;
+    grid-column: 7/7;
+    right: -13px;
+}
+
+.tara_sb{
+  margin-left: -10px;
+  width: 10vw;
+}
+
+.reg_prop {
+  margin-left: -10px;
+  width: 10vw;
+}
+
+}
