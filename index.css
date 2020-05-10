@@ -90,7 +90,7 @@ h1{
      grid-row: 2/6;
      }
  
-     .chart-content{
+    .chart-content{
          grid-area: charts;
          grid-column: 2/8;
          grid-row: 6/10;
