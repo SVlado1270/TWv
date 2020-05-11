@@ -73,26 +73,3 @@ function XMLdownload (XMLstring) {
   hiddenElement.download = 'file.xml'
   hiddenElement.click()
 }
-
-function PDFdata () {
-  var PDFstring = JsonArrayFields.join(',') + '\n'
-  JsonArray.forEach(element => {
-    var femei = element.Femei
-    var barbati = element.Barbati
-    var total = element.Total
-
-    PDFstring += femei + ',' + barbati + ',' + total + '\n'
-  })
-
-  return PDFdownload(PDFstring)
-}
-
-function PDFdownload (PDFstring) {
-  document.onclick = function () {
-    document.getElementById('pdfdoc').onclick = function () {
-      var pdf = new jsPDF('p', 'pt', 'letter')
-      var source = encodeURI(PDFstring)
-      pdf.fromHTML(source, 0.5, 0.5, { width: 7 })
-    }
-  }
-}
