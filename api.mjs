@@ -56,9 +56,9 @@ async function postFunction (request, response) {
   }
 }
 
-const getFunction = (request, response) => {
+const getFunction = (request, response, dbName) => {
   response.writeHead(200, { 'Content-Type': 'application/json' })
-  response.write(JSON.stringify(educatie))
+  response.write(JSON.stringify(dbName))
   response.end()
 }
 
@@ -84,14 +84,51 @@ const server = http.createServer((request, response) => {
   const method = request.method
   console.log(method, url)
   switch (method) {
-   /* case 'POST':
-      if(url == '/post')
+    case 'POST':
       postFunction(request, response)
-      break */
+      break
 
     case 'GET':
-      if (url == '/get')
-      getFunction(request, response)
+      if (url == '/IASI') {
+        var mesaj = []
+        var judet = 'IASI'
+        var educatie = 'SELECT * FROM educatie WHERE JUDET = ' + mysql.escape(judet)
+        var rata = 'SELECT * FROM rata WHERE JUDET = ' + mysql.escape(judet)
+        var varste = 'SELECT * FROM varste WHERE JUDET = ' + mysql.escape(judet)
+        var medii = 'SELECT * FROM medii WHERE JUDET = ' + mysql.escape(judet)
+
+        connection.query(educatie, (err, results, fields) => {
+          if (err) throw err
+          for (var i = 0; i < results.length; i++) {
+            var test = JSON.stringify(results[1])
+            mesaj.push(test)
+            var rez = JSON.parse(test)
+            getFunction(request, response, rez)
+          }
+        })
+
+        connection.query(rata, (err, results, fields) => {
+          if (err) throw err
+          var test = JSON.stringify(results[1])
+          var rez = JSON.parse(test)
+          getFunction(request, response, rez)
+        })
+
+        connection.query(varste, (err, results, fields) => {
+          if (err) throw err
+          var test = JSON.stringify(results[1])
+          var rez = JSON.parse(test)
+          getFunction(request, response, rez)
+        })
+
+        connection.query(medii, (err, results, fields) => {
+          if (err) throw err
+          var test = JSON.stringify(results[1])
+          var rez = JSON.parse(test)
+          getFunction(request, response, rez)
+        })
+        getFunction(request, response, mesaj[1])
+      }
       break
 
     default:
@@ -101,7 +138,7 @@ const server = http.createServer((request, response) => {
   }
 })
 server.listen(PORT)
-
+/*
 var educatie = 'SELECT * FROM educatie'
 var rata = 'SELECT * FROM rata'
 var varste = 'SELECT * FROM varste'
@@ -121,4 +158,4 @@ connection.query(varste, (err, results, fields) => {
 
 connection.query(medii, (err, results, fields) => {
   if (err) throw err
-})
+}) */

@@ -109,7 +109,7 @@ function index_luna (luna) {
       })
 
     } */
-  /*  if (criteriu == 'varste') {
+  / if (criteriu == 'varste') {
       connection.query('SELECT * FROM ' + criteriu + '_' + luna, (error, results, fields) => {
         if (error) { console.log(luna); throw error }
         for (var i = 0; i < results.length; i++) {
