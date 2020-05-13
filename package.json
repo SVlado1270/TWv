@@ -4,7 +4,8 @@
   "description": "",
   "main": "api.mjs",
   "scripts": {
-    "start": "node api.mjs"
+    "start": "node api.mjs",
+    "heroku-postbuild": "pwd"
   },
   "repository": {
     "type": "git",
