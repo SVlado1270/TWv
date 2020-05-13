@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/SVlado1270/TW/issues"
   },
-  "homepage": "https://github.com/SVlado1270/TW#readme"
+  "homepage": "https://github.com/SVlado1270/TW#readme",
+  "dependencies": {
+    "heroku": "^7.41.1"
+  }
 }

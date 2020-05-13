@@ -84,13 +84,13 @@ const server = http.createServer((request, response) => {
   const method = request.method
   console.log(method, url)
   switch (method) {
-    case 'POST':
+   /* case 'POST':
       if(url == '/post')
       postFunction(request, response)
-      break
+      break */
 
     case 'GET':
-      if(url == '/get')
+      if (url == '/get')
       getFunction(request, response)
       break
 
