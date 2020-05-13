@@ -1,3 +1,8 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
+var PORT = process.env.PORT || 5000
+
 const http = require('http')
 
 const db = ['nume', 'varsta', 'ceva']
@@ -53,7 +58,7 @@ const deleteFunction = (request, response) => {
   const value = urlQuery.split('=')[1]
 
   if (field === 'id') {
-    db.splice(value - 1, 1) // stergem elementul de pe pozitia respectiva, fara sa afecteze restul elementelor sau ordinea 
+    db.splice(value - 1, 1) // stergem elementul de pe pozitia respectiva, fara sa afecteze restul elementelor sau ordinea
     response.writeHead(200, { 'Content-type': 'text/plain' })
     response.write('Delete confirmed')
     response.end()
@@ -92,6 +97,4 @@ const server = http.createServer((request, response) => {
       response.end()
   }
 })
-server.listen(5000, () => {
-  console.log('Server running at Port 5000')
-})
+server.listen(PORT)

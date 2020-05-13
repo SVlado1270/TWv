@@ -1,0 +1,20 @@
+{
+  "name": "TW",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SVlado1270/TW.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SVlado1270/TW/issues"
+  },
+  "homepage": "https://github.com/SVlado1270/TW#readme"
+}

@@ -140,6 +140,7 @@ h1{
 }
 
 button{
+    margin-left: 5vw;
     width: 10vw;
     font-size: 2vh;
     color: whitesmoke;
