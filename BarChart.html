@@ -17,7 +17,6 @@
     <button id="varsta">Dupa varsta</button>
     <button id="sex">Dupa sex</button>
     <button id="educatie">Dupa educatie</button></div>
-<!--VARIANTA FARA JQUERY DUPA CE STIM CA NE MERG DATASETS CA LUMEA
     <script>
     function BuildChart(labels, values, chartTitle) {
     var data = {
@@ -33,7 +32,7 @@
   };
   var ctx = document.getElementById("myChart").getContext('2d');
   var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: data,
     options: {
       responsive: true,
@@ -54,7 +53,7 @@
   });
   return myChart;
 }
-var url = 'https://localhost/tw/tw/database.php'
+var url = ''
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
@@ -72,7 +71,6 @@ xhttp.onreadystatechange = function () {
 xhttp.open("GET", url, false);
 xhttp.send();
 </script>
--->
 
 
 <!--AJAX CU JQUERY FUNCTIONAL PT VERIFICAT FUNCTIONALITATEA DB PANA STABILIM TOATE CRITERIILE-->
