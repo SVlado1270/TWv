@@ -2,9 +2,9 @@
   "name": "TW",
   "version": "1.0.0",
   "description": "",
-  "main": "api.js",
+  "main": "api.mjs",
   "scripts": {
-    "start": "node api.js"
+    "start": "node api.mjs"
   },
   "repository": {
     "type": "git",
