@@ -20,9 +20,5 @@ button{
     position: absolute;
     height: 33%;
     width: 60%;
-}
-
-.chart-content{
-  position: relative;
-  grid-area: chart;
+    margin-left : -10px;
 }

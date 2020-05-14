@@ -6,29 +6,227 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-control" content="no-cache">
     <link rel="stylesheet" type="text/css" href="Judet.css">
-    <script src="database.php"></script>
-    <title>Judetul Iasi</title>
+    <script src="incercare.js"></script>
+    <title>Judet</title>
 </head>
 
 <body>
+    
     <div class="wrapper">
+        <a name="top"></a>
         <div class="header" style="background-color: #8c7ce933;">
-            <h1>Jude&tcedil;ul Ia&scedil;i</h1>
+            <h1 id="nume_j"></h1>
         </div>
         <div class="map-content">
-            <img src="./misc/Jud_Iasi.png" alt="Iasi" class="jud_prop" style="filter: sepia();" />
+
+            <img src="." alt="Iasi" class="jud_prop" style="filter: sepia();" >
+            <script>
+                sessionStorage.setItem('tip', 'varste');
+                if (sessionStorage.getItem('judet') === 'Iasi'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Jud_Iasi.png";
+                    document.getElementById("nume_j").innerHTML = "Judetul Iasi"
+                }
+                if (sessionStorage.getItem('judet') === 'Bacau'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Bacau.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Bacau"
+                }
+                if (sessionStorage.getItem('judet') === 'Botosani'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Botosani.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Botosani"
+                }
+                if (sessionStorage.getItem('judet') === 'Suceava'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Suceava.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Suceava"
+                }
+                if (sessionStorage.getItem('judet') === 'Neamt'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Neamt.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Neamt"
+                }
+                if (sessionStorage.getItem('judet') === 'Vaslui'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Vaslui.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Vaslui"
+                }
+                if (sessionStorage.getItem('judet') === 'Galati'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Galati.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Galati"
+                }
+                if (sessionStorage.getItem('judet') === 'Vrancea'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Vrancea.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Vrancea"
+                }
+                if (sessionStorage.getItem('judet') === 'Braila'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Braila.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Braila"
+                }
+                if (sessionStorage.getItem('judet') === 'Tulcea'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Tulcea.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Tulcea"
+                }
+                if (sessionStorage.getItem('judet') === 'Constanta'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Constanta.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Constanta"
+                }
+                if (sessionStorage.getItem('judet') === 'Ialomita'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Ialomita.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Ialomita"
+                }
+                if (sessionStorage.getItem('judet') === 'Calarasi'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Calarasi.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Calarasi"
+                }
+                if (sessionStorage.getItem('judet') === 'Buzau'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Buzau.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Buzau"
+                }
+                if (sessionStorage.getItem('judet') === 'Giurgiu'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Giurgiu.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Giurgiu"
+                }
+                if (sessionStorage.getItem('judet') === 'Ilfov'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Ilfov.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Ilfov"
+                }
+                if (sessionStorage.getItem('judet') === 'Bucuresti'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Bucuresti.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Bucuresti"
+                }
+                if (sessionStorage.getItem('judet') === 'Prahova'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Prahova.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Prahova"
+                }
+                if (sessionStorage.getItem('judet') === 'Brasov'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Brasov.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Brasov"
+                }
+                if (sessionStorage.getItem('judet') === 'Covasna'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Covasna.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Covasna"
+                }
+                if (sessionStorage.getItem('judet') === 'Harghita'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Harghita.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Harghita"
+                }
+                if (sessionStorage.getItem('judet') === 'Teleorman'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Teleorman.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Teleorman"
+                }
+                if (sessionStorage.getItem('judet') === 'Dambovita'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Dambovita.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Dambovita"
+                }
+                if (sessionStorage.getItem('judet') === 'Mures'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Mures.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Mures"
+                }
+                if (sessionStorage.getItem('judet') === 'Bistrita'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Bistrita.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Bistrita"
+                }
+                if (sessionStorage.getItem('judet') === 'Maramures'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Maramures.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Maramures"
+                }
+                if (sessionStorage.getItem('judet') === 'Satu-Mare'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/SatuMare.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Satu-Mare"
+                }
+                if (sessionStorage.getItem('judet') === 'Salaj'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Salaj.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Salaj"
+                }
+                if (sessionStorage.getItem('judet') === 'Cluj'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Cluj.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Cluj"
+                }
+                if (sessionStorage.getItem('judet') === 'Alba'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Alba.png"
+                    document.getElementById("nume_j").innerHTML = "Judetul Alba"
+                }
+                if (sessionStorage.getItem('judet') === 'Sibiu'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Sibiu.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Sibiu"
+                }
+                if (sessionStorage.getItem('judet') === 'Valcea'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Valcea.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Valcea"
+                }
+                if (sessionStorage.getItem('judet') === 'Arges'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Arges.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Arges"
+                }
+                if (sessionStorage.getItem('judet') === 'Olt'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Olt.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Olt"
+                }
+                if (sessionStorage.getItem('judet') === 'Dolj'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Dolj.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Dolj"
+                }
+                if (sessionStorage.getItem('judet') === 'Mehedinti'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Mehedinti.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Mehedinti"
+                }
+                if (sessionStorage.getItem('judet') === 'Gorj'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Gorj.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Gorj"
+                }
+                if (sessionStorage.getItem('judet') === 'Bihor'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Bihor.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Bihor"
+                }
+                if (sessionStorage.getItem('judet') === 'Arad'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Arad.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Arad"
+                }
+                if (sessionStorage.getItem('judet') === 'Timis'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Timis.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Timis"
+                }
+                if (sessionStorage.getItem('judet') === 'Hunedoara'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/Hunedoara.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Hunedoara"
+                }
+                if (sessionStorage.getItem('judet') === 'Caras'){
+                    document.getElementsByClassName("jud_prop")[0].src = "./misc/CarasSeverin.svg"
+                    document.getElementById("nume_j").innerHTML = "Judetul Caras"
+                }
+            </script>
+
         </div>
+        
         <div class="chart-content">
             <div id="pie_legend" class="pie_position">
-                <h2>Vizualizare statistici</h2>
-                <ul>
+                <h2 style="margin-top: 1vh; margin-bottom: 5vh;">Vizualizare statistici</h2></a>
+                <!--<button type="button" onClick="getJudet()">Click Me!</button>-->
+               <ul>
                     <!--procentele nu sunt supported de HTML5, desi pt noi vor functiona-->
-                    <li><object width="800px" height="350px" data="./BarChart.html"></object></li>
-                    <li><object width="800px" height="350px" data="./LineChart.html"></object></li>
-                    <li><object width="800px" height="350px" data="./RadarChart.html"></object></li>
-                    <li><object width="800px" height="350px" data="./LineChart.html"></object></li>
-                </ul>
+                    <li>
+                        <button id="varste" onclick="set_varste()">Varste</button>
+                        <button id="educatie" onclick="set_educatie()">Educatie</button>
+                        <button id="medii" onclick="set_medii()">Medii</button>
+                        <button id="rata" onclick="set_rata()">Rata</button>
+                        <h2 style="margin-top: 7vh;">BarChart</h2>
+                        <object id="bar" width="600px" height="700px" data="./BarChart.html"></object>
+                    </li>
+                    <li>
+                        <button id="varste" onclick="set_varste()">Varste</button>
+                        <button id="educatie" onclick="set_educatie()">Educatie</button>
+                        <button id="medii" onclick="set_medii()">Medii</button>
+                        <button id="rata" onclick="set_rata()">Rata</button>
+                        <h2 style="margin-top: 7vh;">LineChart</h2>
+                        <object id="line" width="600px" height="700px" data="./LineChart.html"></object>
+                    </li>
+                    <li>
+                        <button id="varste" onclick="set_varste()">Varste</button>
+                        <button id="educatie" onclick="set_educatie()">Educatie</button>
+                        <button id="medii" onclick="set_medii()">Medii</button>
+                        <button id="rata" onclick="set_rata()">Rata</button>
+                        <h2 style="margin-top: 7vh;">RadarChart</h2>
+                        <object id="radar" width="600px" height="700px" data="./RadarChart.html"></object>
+                    </li>
+               </ul>
             </div>
+            
         </div>
         <div class="sidebar" style="background-color: #7c83e92f;">
             <a href="Regiune.html">
@@ -38,7 +236,9 @@
                 <img id="hover_img" src="MAPABUNA.svg" alt="Romania" class="tara_sb" style="filter: sepia();" />
             </a>
         </div>
+        <a href="#top"><button style="margin-top: 91vh; right: 3px; position: fixed; width: 50px; background-color: #7c83e959; color: gray;" id="topbutton">to the top</button></a>
     </div>
+    
 </body>
 
 </html>
