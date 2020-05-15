@@ -1,4 +1,4 @@
-<!-- bar chart pentru varste :)-->
+<!-- bar chart pentru MEDII :)-->
 <!DOCTYPE html>
 <html>
 
@@ -15,8 +15,10 @@
     </div>
     <script>
         var judet = sessionStorage.getItem('judet');
+        //var judet = 'IASI'
         judet = judet.toUpperCase()
-        tip = sessionStorage.getItem('tip')
+        //tip = "educatie"
+        tip = sessionStorage.getItem('tip');
         var url = 'https://vvv1270.azurewebsites.net/' + judet + '/' + tip;
         console.log(url)
         var xhttp = new XMLHttpRequest();
@@ -25,21 +27,25 @@
                 var json = JSON.parse(this.response);
                 //var luni = []
                 var total = []
-                var sub_25 = []
-                var ani25 = []
-                var ani30 = []
-                var ani40 = []
-                var ani50 = []
-                var ani55 = []
+                var total_femei = []
+                var total_barbati = []
+                var total_urban = []
+                var femei_urban = []
+                var barbati_urban = []
+                var total_rural = []
+                var femei_rural = []
+                var barbati_rural = []
                 for (var i = 0; i < json.length; i++) {
                     // luni.push(json[i].luna);
-                    total.push(json[i].TOTAL)
-                    sub_25.push(json[i].Sub_25_ani)
-                    ani25.push(json[i].ani_25_29)
-                    ani30.push(json[i].ani_30_39)
-                    ani40.push(json[i].ani_40_49)
-                    ani50.push(json[i].ani_50_55)
-                    ani55.push(json[i].peste_55_ani)
+                    total.push(json[i].NUMAR_TOTAL_SOMERI)
+                    total_femei.push(json[i].NUMAR_TOTAL_SOMERI_FEMEI)
+                    total_barbati.push(json[i].NUMAR_TOTAL_SOMERI_BARBATI)
+                    total_urban.push(json[i].NUMAR_TOTAL_SOMERI_DIN_MEDIUL_URBAN)
+                    femei_urban.push(json[i].NUMAR_SOMERI_FEMEI_DIN_MEDIUL_URBAN)
+                    barbati_urban.push(json[i].NUMAR_SOMERI_BARBATI_DIN_MEDIUL_URBAN)
+                    total_rural.push(json[i].NUMAR_TOTAL_SOMERI_DIN_MEDIUL_RURAL)
+                    femei_rural.push(json[i].NUMAR_SOMERI_FEMEI_DIN_MEDIUL_RURAL)
+                    barbati_rural.push(json[i].NUMAR_SOMERI_BARBATI_DIN_MEDIUL_RURAL)
                 }
                 var LUNI = ['Aprilie', 'Mai', 'Iunie', 'Iulie', 'Septembrie', 'Octombrie', 'Noiembrie', 'Ianuarie', 'Decembrie', 'Martie']
                 var ctx = document.getElementById('chart').getContext('2d');
@@ -48,8 +54,8 @@
                     data: {
                         labels: LUNI,
                         datasets: [{
-                            label: 'Sub 25 de ani',
-                            data: sub_25,
+                            label: 'Numar total someri',
+                            data: total,
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
                                 'rgba(255, 99, 132, 0.2)',
@@ -81,8 +87,8 @@
                         },
 
                         {
-                            label: '25-29 ani',
-                            data: ani25,
+                            label: 'Numar total someri femei',
+                            data: total_femei,
                             backgroundColor: [
                                 'rgba(54, 162, 235, 0.2)',
                                 'rgba(54, 162, 235, 0.2)',
@@ -113,8 +119,8 @@
                         },
 
                         {
-                            label: '30-39 ani',
-                            data: ani30,
+                            label: 'Numar total someri barbati',
+                            data: total_barbati,
                             backgroundColor: [
                                 'rgba(255, 206, 86, 0.2)',
                                 'rgba(255, 206, 86, 0.2)',
@@ -144,8 +150,8 @@
                             borderWidth: 1
                         },
                         {
-                            label: '40-49 ani',
-                            data: ani40,
+                            label: 'Numar total someri din mediul urban',
+                            data: total_urban,
                             backgroundColor: [
                                 'rgba(75, 192, 192, 0.2)',
                                 'rgba(75, 192, 192, 0.2)',
@@ -175,8 +181,8 @@
                             borderWidth: 1
                         },
                         {
-                            label: '50-55 ani',
-                            data: ani50,
+                            label: 'Numar femei somere din mediul urban',
+                            data: femei_urban,
                             backgroundColor: [
                                 'rgba(153, 102, 255, 0.2)',
                                 'rgba(153, 102, 255, 0.2)',
@@ -206,8 +212,8 @@
                             borderWidth: 1
                         },
                         {
-                            label: 'Peste 55 ani',
-                            data: ani55,
+                            label: 'Numar barbati someri din mediul urban',
+                            data: barbati_urban,
                             backgroundColor: [
                                 'rgba(255, 159, 64, 0.2)',
                                 'rgba(255, 159, 64, 0.2)',
@@ -235,6 +241,99 @@
                                 'rgba(255, 159, 64, 1)',
                             ],
                             borderWidth: 1
+                        },
+                        {
+                            label: 'Numar total someri din mediul rural',
+                            data: total_rural,
+                            backgroundColor: [
+                                'rgba(147, 67, 22, 0.2)',
+                                'rgba(147, 67, 22, 0.2)',
+                                'rgba(147, 67, 22, 0.2)',
+                                'rgba(147, 67, 22, 0.2)',
+                                'rgba(147, 67, 22, 0.2)',
+                                'rgba(147, 67, 22, 0.2)',
+                                'rgba(147, 67, 22, 0.2)',
+                                'rgba(147, 67, 22, 0.2)',
+                                'rgba(147, 67, 22, 0.2)',
+                                'rgba(147, 67, 22, 0.2)',
+                                'rgba(147, 67, 22, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(147, 67, 22, 1)',
+                                'rgba(147, 67, 22, 1)',
+                                'rgba(147, 67, 22, 1)',
+                                'rgba(147, 67, 22, 1)',
+                                'rgba(147, 67, 22, 1)',
+                                'rgba(147, 67, 22, 1)',
+                                'rgba(147, 67, 22, 1)',
+                                'rgba(147, 67, 22, 1)',
+                                'rgba(147, 67, 22, 1)',
+                                'rgba(147, 67, 22, 1)',
+                                'rgba(147, 67, 22, 1)',
+                            ],
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Numar femei somere din mediul rural',
+                            data: femei_rural,
+                            backgroundColor: [
+                                'rgba(0,0,139, 0.2)',
+                                'rgba(0,0,139, 0.2)',
+                                'rgba(0,0,139, 0.2)',
+                                'rgba(0,0,139, 0.2)',
+                                'rgba(0,0,139, 0.2)',
+                                'rgba(0,0,139, 0.2)',
+                                'rgba(0,0,139, 0.2)',
+                                'rgba(0,0,139, 0.2)',
+                                'rgba(0,0,139, 0.2)',
+                                'rgba(0,0,139, 0.2)',
+                                'rgba(0,0,139, 0.2)',
+                            ],
+                            borderColor: [
+                                'rgba(0,0,139, 1)',
+                                'rgba(0,0,139, 1)',
+                                'rgba(0,0,139, 1)',
+                                'rgba(0,0,139, 1)',
+                                'rgba(0,0,139, 1)',
+                                'rgba(0,0,139, 1)',
+                                'rgba(0,0,139, 1)',
+                                'rgba(0,0,139, 1)',
+                                'rgba(0,0,139, 1)',
+                                'rgba(0,0,139, 1)',
+                                'rgba(0,0,139, 1)',
+                            ],
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Numar barbati someri din mediul rural',
+                            data: barbati_rural,
+                            backgroundColor: [
+                                'rgba(128,0,128, 0.2)',
+                                'rgba(128,0,128, 0.2)',
+                                'rgba(128,0,128, 0.2)',
+                                'rgba(128,0,128, 0.2)',
+                                'rgba(128,0,128, 0.2)',
+                                'rgba(128,0,128, 0.2)',
+                                'rgba(128,0,128, 0.2)',
+                                'rgba(128,0,128, 0.2)',
+                                'rgba(128,0,128, 0.2)',
+                                'rgba(128,0,128, 0.2)',
+                                'rgba(128,0,128, 0.2)',
+                            ],
+                            borderColor: [
+                                'rgba(128,0,128, 1)',
+                                'rgba(128,0,128, 1)',
+                                'rgba(128,0,128, 1)',
+                                'rgba(128,0,128, 1)',
+                                'rgba(128,0,128, 1)',
+                                'rgba(128,0,128, 1)',
+                                'rgba(128,0,128, 1)',
+                                'rgba(128,0,128, 1)',
+                                'rgba(128,0,128, 1)',
+                                'rgba(128,0,128, 1)',
+                                'rgba(128,0,128, 1)',
+                            ],
+                            borderWidth: 1
                         }
                         ]
                     },
@@ -255,6 +354,12 @@
                                     labels[4].strokeStyle = 'rgba(153, 102, 255, 0.2)';
                                     labels[5].fillStyle = 'rgba(255, 159, 64, 0.2)';
                                     labels[5].strokeStyle = 'rgba(255, 159, 64, 0.2)';
+                                    labels[6].fillStyle = 'rgba(147, 67, 22, 0.2)';
+                                    labels[6].strokeStyle = 'rgba(147, 67, 22, 0.2)';
+                                    labels[7].fillStyle = 'rgba(0,0,139, 0.2)';
+                                    labels[7].strokeStyle = 'rgba(0,0,139, 0.2)';
+                                    labels[8].fillStyle = 'rgba(128,0,128, 0.2)';
+                                    labels[8].strokeStyle = 'rgba(128,0,128, 0.2)';
                                     return labels;
                                 }
                             }

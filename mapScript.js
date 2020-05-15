@@ -1,5 +1,5 @@
 var map = document.getElementById("romaniaMap");
-map.addEventListener("load", function() {
+map.addEventListener("load", function () {
 
     var svgDoc = this.getSVGDocument();
 
@@ -46,171 +46,679 @@ map.addEventListener("load", function() {
     var valcea = svgDoc.getElementById("sm_state_Valcea");
     var vrancea = svgDoc.getElementById("sm_state_Vrancea");
 
-    iasi.addEventListener("mousedown", function() {
-        alert('iasi')
+    iasi.addEventListener("mousedown", function () {
+        //alert('iasi')
+        //location.replace("Judet.html");
+        //console.log("Am schimbat pe judet");
+        // document.getElementById('h1_id').innerHTML = "Judet nou";
+        var url = 'https://vvv1270.azurewebsites.net/IASI';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
+
     }, false);
-    alba.addEventListener("mousedown", function() {
-        alert('alba')
+    alba.addEventListener("mousedown", function () {
+        //alert('alba')
+        var url = 'https://vvv1270.azurewebsites.net/IASI';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    arad.addEventListener("mousedown", function() {
-        alert('arad')
+    arad.addEventListener("mousedown", function () {
+        //alert('arad')
+        var url = 'https://vvv1270.azurewebsites.net/ARAD';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    arges.addEventListener("mousedown", function() {
-        alert('arges')
+    arges.addEventListener("mousedown", function () {
+        //alert('arges')
+        var url = 'https://vvv1270.azurewebsites.net/ARGES';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    bacau.addEventListener("mousedown", function() {
-        alert('bacau')
+    bacau.addEventListener("mousedown", function () {
+        //alert('bacau')
+        var url = 'https://vvv1270.azurewebsites.net/BACAU';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    bihor.addEventListener("mousedown", function() {
-        alert('bihor')
+    bihor.addEventListener("mousedown", function () {
+        //alert('bihor')
+        var url = 'https://vvv1270.azurewebsites.net/BIHOR';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    bistritaNasaud.addEventListener("mousedown", function() {
-        alert('bistrita')
+    bistritaNasaud.addEventListener("mousedown", function () {
+        //alert('bistrita')
+        var url = 'https://vvv1270.azurewebsites.net/BISTRITA';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    botosani.addEventListener("mousedown", function() {
-        alert('botosani')
+    botosani.addEventListener("mousedown", function () {
+        //alert('botosani')
+        var url = 'https://vvv1270.azurewebsites.net/BOTOSANI';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    brasov.addEventListener("mousedown", function() {
-        alert('brasov')
+    brasov.addEventListener("mousedown", function () {
+        // alert('brasov')
+        var url = 'https://vvv1270.azurewebsites.net/BRASOV';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    braila.addEventListener("mousedown", function() {
-        alert('braila')
+    braila.addEventListener("mousedown", function () {
+        //alert('braila')
+        var url = 'https://vvv1270.azurewebsites.net/BRAILA';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    bucuresti.addEventListener("mousedown", function() {
-        alert('bucale')
+    bucuresti.addEventListener("mousedown", function () {
+        //alert('bucale')
+        var url = 'https://vvv1270.azurewebsites.net/BUCURESTI';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    buzau.addEventListener("mousedown", function() {
-        alert('buzau')
+    buzau.addEventListener("mousedown", function () {
+        //alert('buzau')
+        var url = 'https://vvv1270.azurewebsites.net/BUZAU';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    carasSeverin.addEventListener("mousedown", function() {
-        alert('caras')
+    carasSeverin.addEventListener("mousedown", function () {
+        //alert('caras')
+        var url = 'https://vvv1270.azurewebsites.net/CARAS';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    calarasi.addEventListener("mousedown", function() {
-        alert('calarasi')
+    calarasi.addEventListener("mousedown", function () {
+        //alert('calarasi')
+        var url = 'https://vvv1270.azurewebsites.net/CALARASI';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    cluj.addEventListener("mousedown", function() {
-        alert('cluj')
+    cluj.addEventListener("mousedown", function () {
+        // alert('cluj')
+        var url = 'https://vvv1270.azurewebsites.net/CLUJ';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    constanta.addEventListener("mousedown", function() {
-        alert('constanta')
+    constanta.addEventListener("mousedown", function () {
+        //alert('constanta')
+        var url = 'https://vvv1270.azurewebsites.net/CONSTANTA';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    covasna.addEventListener("mousedown", function() {
-        alert('covasna')
+    covasna.addEventListener("mousedown", function () {
+        //alert('covasna')
+        var url = 'https://vvv1270.azurewebsites.net/COVASNA';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    dambovita.addEventListener("mousedown", function() {
-        alert('dambovita')
+    dambovita.addEventListener("mousedown", function () {
+        //alert('dambovita')
+        var url = 'https://vvv1270.azurewebsites.net/DAMBOVITA';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    dolj.addEventListener("mousedown", function() {
-        alert('dolj')
+    dolj.addEventListener("mousedown", function () {
+        //alert('dolj')
+        var url = 'https://vvv1270.azurewebsites.net/DOLJ';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    galati.addEventListener("mousedown", function() {
-        alert('galati')
+    galati.addEventListener("mousedown", function () {
+        //alert('galati')
+        var url = 'https://vvv1270.azurewebsites.net/GALATI';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    giurgiu.addEventListener("mousedown", function() {
-        alert('giurgiu')
+    giurgiu.addEventListener("mousedown", function () {
+        //alert('giurgiu')
+        var url = 'https://vvv1270.azurewebsites.net/GIURGIU';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    gorj.addEventListener("mousedown", function() {
-        alert('gorj')
+    gorj.addEventListener("mousedown", function () {
+        //alert('gorj')
+        var url = 'https://vvv1270.azurewebsites.net/GORJ';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    harghita.addEventListener("mousedown", function() {
-        alert('harghita')
+    harghita.addEventListener("mousedown", function () {
+        //alert('harghita')
+        var url = 'https://vvv1270.azurewebsites.net/HARGHITA';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    hunedoara.addEventListener("mousedown", function() {
-        alert('hunedoara')
+    hunedoara.addEventListener("mousedown", function () {
+        //alert('hunedoara')
+        var url = 'https://vvv1270.azurewebsites.net/HUNEDOARA';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    ialomita.addEventListener("mousedown", function() {
-        alert('ialomita')
+    ialomita.addEventListener("mousedown", function () {
+        //alert('ialomita')
+        var url = 'https://vvv1270.azurewebsites.net/IALOMITA';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    ilfov.addEventListener("mousedown", function() {
-        alert('ilfov')
+    ilfov.addEventListener("mousedown", function () {
+        //alert('ilfov')
+        var url = 'https://vvv1270.azurewebsites.net/ILFOV';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    maramures.addEventListener("mousedown", function() {
-        alert('maramures')
+    maramures.addEventListener("mousedown", function () {
+        //alert('maramures')
+        var url = 'https://vvv1270.azurewebsites.net/MARAMURES';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    mehedinti.addEventListener("mousedown", function() {
-        alert('mehedinti')
+    mehedinti.addEventListener("mousedown", function () {
+        //alert('mehedinti')
+        var url = 'https://vvv1270.azurewebsites.net/MEHDINTI';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    mures.addEventListener("mousedown", function() {
-        alert('mures')
+    mures.addEventListener("mousedown", function () {
+        //alert('mures')
+        var url = 'https://vvv1270.azurewebsites.net/MURES';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    neamt.addEventListener("mousedown", function() {
-        alert('neamt')
+    neamt.addEventListener("mousedown", function () {
+        //alert('neamt')
+        var url = 'https://vvv1270.azurewebsites.net/NEAMT';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    olt.addEventListener("mousedown", function() {
-        alert('olt')
+    olt.addEventListener("mousedown", function () {
+        //alert('olt')
+        var url = 'https://vvv1270.azurewebsites.net/OLT';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    prahova.addEventListener("mousedown", function() {
-        alert('prahova')
+    prahova.addEventListener("mousedown", function () {
+        // alert('prahova')
+        var url = 'https://vvv1270.azurewebsites.net/PRAHOVA';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    satuMare.addEventListener("mousedown", function() {
-        alert('satu mare')
+    satuMare.addEventListener("mousedown", function () {
+        //alert('satu mare')
+        var url = 'https://vvv1270.azurewebsites.net/SATUMARE';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    salaj.addEventListener("mousedown", function() {
-        alert('salaj')
+    salaj.addEventListener("mousedown", function () {
+        //alert('salaj')
+        var url = 'https://vvv1270.azurewebsites.net/SALAJ';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    sibiu.addEventListener("mousedown", function() {
-        alert('sibiu')
+    sibiu.addEventListener("mousedown", function () {
+        //alert('sibiu')
+        var url = 'https://vvv1270.azurewebsites.net/SIBIU';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    suceava.addEventListener("mousedown", function() {
-        alert('suceava')
+    suceava.addEventListener("mousedown", function () {
+        //alert('suceava')
+        var url = 'https://vvv1270.azurewebsites.net/SUCEAVA';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    teleorman.addEventListener("mousedown", function() {
-        alert('teleorman')
+    teleorman.addEventListener("mousedown", function () {
+        //alert('teleorman')
+        var url = 'https://vvv1270.azurewebsites.net/TELEORMAN';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    timis.addEventListener("mousedown", function() {
-        alert('timis')
+    timis.addEventListener("mousedown", function () {
+        //alert('timis')
+        var url = 'https://vvv1270.azurewebsites.net/TIMIS';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    tulcea.addEventListener("mousedown", function() {
-        alert('tulcea')
+    tulcea.addEventListener("mousedown", function () {
+        //alert('tulcea')
+        var url = 'https://vvv1270.azurewebsites.net/TULCEA';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    vaslui.addEventListener("mousedown", function() {
-        alert('vaslui')
+    vaslui.addEventListener("mousedown", function () {
+        //alert('vaslui')
+        var url = 'https://vvv1270.azurewebsites.net/VASLUI';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    valcea.addEventListener("mousedown", function() {
-        alert('valcea')
+    valcea.addEventListener("mousedown", function () {
+        //alert('valcea')
+        var url = 'https://vvv1270.azurewebsites.net/VALCEA';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
-    vrancea.addEventListener("mousedown", function() {
-        alert('vrancea')
+    vrancea.addEventListener("mousedown", function () {
+        //alert('vrancea')
+        var url = 'https://vvv1270.azurewebsites.net/VRANCEA';
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.response);
+                console.log(json)
+                sessionStorage.setItem('judet', json.Judet);
+                location.replace("Judet.html");
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
     }, false);
 
 }, false);
