@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="regiune.css">
+    <script src="selectieJudete.js"></script>
     <title>Regiunea Moldova</title>
 </head>
 
 <body>
     <div class="wrapper">
         <div class="header" style="background-color: #8c7ce92a;">
-            <h1>Regiunea Nord-Est</h1>
+            <h1 id="nume_r">Regiunea Nord-Est</h1>
         </div>
 
         <div class="map-content">
-            <img src="./misc/Nord-Est.svg" alt="Regiunea NE" class="jud_prop"/>
+            <img src="./misc/Nord-Est.svg" alt="Regiunea NE" class="reg_prop" />
         </div>
 
         <div class="chart-content">
@@ -33,21 +34,183 @@
         <div class="sidebar" style="background-color: #8c7ce92a;">
 
             <a href="index.html">
-                <img id="hover_img" src="MAPABUNA.svg" alt="Romania" class="tara_sb" style="filter: sepia();"/>
+                <img id="hover_img" src="MAPABUNA.svg" alt="Romania" class="tara_sb" style="filter: sepia();" />
             </a>
 
             <div class="dropdown-menu">
                 <div class="harta_hover">
-                    <img id="hover_img" src="./misc/Reg_Moldova.png" alt="Moldova" class="imagine"/>
+                    <img id="hover_img" src="./misc/Reg_Moldova.png" alt="Moldova" class="imagine" />
 
-                    <div class="drop-content">
-                        <a href='#'>Iasi</a>
-                        <a href='#'>Bacau</a>
-                        <a href='#'>Botosani</a>
-                        <a href='#'>Neamt</a>
-                        <a href='#'>Suceava</a>
-                        <a href='#'>Vaslui</a>
+                    <div class="drop-content" id="listaJud">
+
+                        <a href="Judet.html" id="1" class="jud_comp"></a>
+                        <a href="Judet.html" id="2" class="jud_comp"></a>
+                        <a href="Judet.html" id="3" class="jud_comp"></a>
+                        <a href="Judet.html" id="4" class="jud_comp"></a>
+                        <a href="Judet.html" id="5" class="jud_comp"></a>
+                        <a href="Judet.html" id="6" class="jud_comp"></a>
+                        <a href="Judet.html" id="7" class="jud_comp"></a>
+                        <script>
+                            if (sessionStorage.getItem('regiune') === 'nordest') {
+                                document.getElementsByClassName("reg_prop")[0].src = "./misc/Nord-Est.svg";
+                                document.getElementById("nume_r").innerHTML = "Regiunea Nord-Est";
+                                document.getElementsByClassName("jud_comp")[0].id = "jud_iasi";
+                                document.getElementsByClassName("jud_comp")[0].innerHTML = "Iasi";
+                                document.getElementsByClassName("jud_comp")[1].id = "jud_bacau";
+                                document.getElementsByClassName("jud_comp")[1].innerHTML = "Bacau";
+                                document.getElementsByClassName("jud_comp")[2].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[2].id = "jud_botosani";
+                                document.getElementsByClassName("jud_comp")[2].innerHTML = "Botosani";
+                                document.getElementsByClassName("jud_comp")[3].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[3].id = "jud_neamt";
+                                document.getElementsByClassName("jud_comp")[3].innerHTML = "Neamt";
+                                document.getElementsByClassName("jud_comp")[4].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[4].id = "jud_suceava";
+                                document.getElementsByClassName("jud_comp")[4].innerHTML = "Suceava";
+                                document.getElementsByClassName("jud_comp")[5].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[5].id = "jud_vaslui";
+                                document.getElementsByClassName("jud_comp")[5].innerHTML = "Vaslui";
+                                document.getElementsByClassName("jud_comp")[6].style.display = "none";
+                            }
+                            if (sessionStorage.getItem('regiune') === 'centru') {
+                                document.getElementsByClassName("reg_prop")[0].src = "./misc/Centru.svg";
+                                document.getElementById("nume_r").innerHTML = "Regiunea Centru";
+                                document.getElementsByClassName("jud_comp")[0].id = "jud_alba";
+                                document.getElementsByClassName("jud_comp")[0].innerHTML = "Alba";
+                                document.getElementsByClassName("jud_comp")[1].id = "jud_brasov";
+                                document.getElementsByClassName("jud_comp")[1].innerHTML = "Brasov";
+                                document.getElementsByClassName("jud_comp")[2].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[2].id = "jud_covasna";
+                                document.getElementsByClassName("jud_comp")[2].innerHTML = "Covasna";
+                                document.getElementsByClassName("jud_comp")[3].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[3].id = "jud_harghita";
+                                document.getElementsByClassName("jud_comp")[3].innerHTML = "Harghita";
+                                document.getElementsByClassName("jud_comp")[4].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[4].id = "jud_mures";
+                                document.getElementsByClassName("jud_comp")[4].innerHTML = "Mures";
+                                document.getElementsByClassName("jud_comp")[5].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[5].id = "jud_sibiu";
+                                document.getElementsByClassName("jud_comp")[5].innerHTML = "Sibiu";
+                                document.getElementsByClassName("jud_comp")[6].style.display = "none";
+                            }
+                            if (sessionStorage.getItem('regiune') === 'sudest') {
+                                document.getElementsByClassName("reg_prop")[0].src = "./misc/Sud-Est.svg";
+                                document.getElementById("nume_r").innerHTML = "Regiunea Sud-Est";
+                                document.getElementsByClassName("jud_comp")[0].id = "jud_braila";
+                                document.getElementsByClassName("jud_comp")[0].innerHTML = "Braila";
+                                document.getElementsByClassName("jud_comp")[1].id = "jud_buzau";
+                                document.getElementsByClassName("jud_comp")[1].innerHTML = "Buzau";
+                                document.getElementsByClassName("jud_comp")[2].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[2].id = "jud_constanta";
+                                document.getElementsByClassName("jud_comp")[2].innerHTML = "Constanta";
+                                document.getElementsByClassName("jud_comp")[3].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[3].id = "jud_galati";
+                                document.getElementsByClassName("jud_comp")[3].innerHTML = "Galati";
+                                document.getElementsByClassName("jud_comp")[4].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[4].id = "jud_tulcea";
+                                document.getElementsByClassName("jud_comp")[4].innerHTML = "Tulcea";
+                                document.getElementsByClassName("jud_comp")[5].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[5].id = "jud_vrancea";
+                                document.getElementsByClassName("jud_comp")[5].innerHTML = "Vrancea";
+                                document.getElementsByClassName("jud_comp")[6].style.display = "none";
+                            }
+                            if (sessionStorage.getItem('regiune') === 'sud') {
+                                document.getElementsByClassName("reg_prop")[0].src = "./misc/Sud-Muntenia.svg";
+                                document.getElementById("nume_r").innerHTML = "Regiunea Sud-Muntenia";
+                                document.getElementsByClassName("jud_comp")[0].id = "jud_arges";
+                                document.getElementsByClassName("jud_comp")[0].innerHTML = "Arges";
+                                document.getElementsByClassName("jud_comp")[1].id = "jud_calarasi";
+                                document.getElementsByClassName("jud_comp")[1].innerHTML = "Calarasi";
+                                document.getElementsByClassName("jud_comp")[2].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[2].id = "jud_dambovita";
+                                document.getElementsByClassName("jud_comp")[2].innerHTML = "Dambovita";
+                                document.getElementsByClassName("jud_comp")[3].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[3].id = "jud_giurgiu";
+                                document.getElementsByClassName("jud_comp")[3].innerHTML = "Giurgiu";
+                                document.getElementsByClassName("jud_comp")[4].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[4].id = "jud_ialomita";
+                                document.getElementsByClassName("jud_comp")[4].innerHTML = "Ialomita";
+                                document.getElementsByClassName("jud_comp")[5].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[5].id = "jud_prahova";
+                                document.getElementsByClassName("jud_comp")[5].innerHTML = "Prahova";
+                                document.getElementsByClassName("jud_comp")[6].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[6].id = "jud_teleorman";
+                                document.getElementsByClassName("jud_comp")[6].innerHTML = "Teleorman";
+                            }
+                            if (sessionStorage.getItem('regiune') === 'sudvest') {
+                                document.getElementsByClassName("reg_prop")[0].src = "./misc/Sud-Vest-Oltenia.svg";
+                                document.getElementById("nume_r").innerHTML = "Regiunea Sud-Vest-Oltenia";
+                                document.getElementsByClassName("jud_comp")[0].id = "jud_dolj";
+                                document.getElementsByClassName("jud_comp")[0].innerHTML = "";
+                                document.getElementsByClassName("jud_comp")[1].id = "jud_gorj";
+                                document.getElementsByClassName("jud_comp")[1].innerHTML = "";
+                                document.getElementsByClassName("jud_comp")[2].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[2].id = "jud_mehedinti";
+                                document.getElementsByClassName("jud_comp")[2].innerHTML = "";
+                                document.getElementsByClassName("jud_comp")[3].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[3].id = "jud_olt";
+                                document.getElementsByClassName("jud_comp")[3].innerHTML = "";
+                                document.getElementsByClassName("jud_comp")[4].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[4].id = "jud_valcea";
+                                document.getElementsByClassName("jud_comp")[4].innerHTML = "";
+                                document.getElementsByClassName("jud_comp")[5].style.display = "none";
+                                document.getElementsByClassName("jud_comp")[6].style.display = "none";
+                            }
+                            if (sessionStorage.getItem('regiune') === 'vest') {
+                                document.getElementsByClassName("reg_prop")[0].src = "./misc/Vest.svg";
+                                document.getElementById("nume_r").innerHTML = "Regiunea Vest";
+                                document.getElementsByClassName("jud_comp")[0].id = "jud_arad";
+                                document.getElementsByClassName("jud_comp")[0].innerHTML = "Arad";
+                                document.getElementsByClassName("jud_comp")[1].id = "jud_caras_severin";
+                                document.getElementsByClassName("jud_comp")[1].innerHTML = "Caras Severin";
+                                document.getElementsByClassName("jud_comp")[2].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[2].id = "jud_hunedoara";
+                                document.getElementsByClassName("jud_comp")[2].innerHTML = "Hunedoara";
+                                document.getElementsByClassName("jud_comp")[3].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[3].id = "jud_timis";
+                                document.getElementsByClassName("jud_comp")[3].innerHTML = "Timis";
+                                document.getElementsByClassName("jud_comp")[4].style.display = "none";
+                                document.getElementsByClassName("jud_comp")[5].style.display = "none";
+                                document.getElementsByClassName("jud_comp")[6].style.display = "none";
+                            }
+                            if (sessionStorage.getItem('regiune') === 'nordvest') {
+                                document.getElementsByClassName("reg_prop")[0].src = "./misc/Nord-Vest.svg";
+                                document.getElementById("nume_r").innerHTML = "Regiunea Nord-Vest";
+                                document.getElementsByClassName("jud_comp")[0].id = "jud_bihor";
+                                document.getElementsByClassName("jud_comp")[0].innerHTML = "Bihor";
+                                document.getElementsByClassName("jud_comp")[1].id = "jud_bistrita_nasaud";
+                                document.getElementsByClassName("jud_comp")[1].innerHTML = "Bistrita Nasaud";
+                                document.getElementsByClassName("jud_comp")[2].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[2].id = "jud_cluj";
+                                document.getElementsByClassName("jud_comp")[2].innerHTML = "Cluj";
+                                document.getElementsByClassName("jud_comp")[3].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[3].id = "jud_maramures";
+                                document.getElementsByClassName("jud_comp")[3].innerHTML = "Maramures";
+                                document.getElementsByClassName("jud_comp")[4].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[4].id = "jud_satu_mare";
+                                document.getElementsByClassName("jud_comp")[4].innerHTML = "Satu Mare";
+                                document.getElementsByClassName("jud_comp")[5].style.display = "block";
+                                document.getElementsByClassName("jud_comp")[5].id = "jud_salaj";
+                                document.getElementsByClassName("jud_comp")[5].innerHTML = "Salaj";
+                                document.getElementsByClassName("jud_comp")[6].style.display = "none";
+                            }
+                            if (sessionStorage.getItem('regiune') === 'bucilfov') {
+                                document.getElementsByClassName("reg_prop")[0].src = "./misc/Bucuresti-Ilfov.svg";
+                                document.getElementById("nume_r").innerHTML = "Regiunea Bucuresti-Ilfov";
+                                document.getElementsByClassName("jud_comp")[0].id = "jud_bucuresti";
+                                document.getElementsByClassName("jud_comp")[0].innerHTML = "";
+                                document.getElementsByClassName("jud_comp")[1].id = "jud_ilfov";
+                                document.getElementsByClassName("jud_comp")[1].innerHTML = "";
+                                document.getElementsByClassName("jud_comp")[2].style.display = "none";
+                                document.getElementsByClassName("jud_comp")[3].style.display = "none";
+                                document.getElementsByClassName("jud_comp")[4].style.display = "none";
+                                document.getElementsByClassName("jud_comp")[5].style.display = "none";
+                                document.getElementsByClassName("jud_comp")[6].style.display = "none";
+                            }
+                        </script>
+                        <script src="regiuneScript.js"></script>
                     </div>
+
                 </div>
             </div>
         </div>
