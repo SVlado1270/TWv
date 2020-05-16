@@ -230,7 +230,7 @@ var server = http.createServer(function (req, res) {
     if(req.url === '/BISTRITA'){
         res.writeHead(200,{'Content-type': 'application/json'});
         var obj = {
-            Judet: 'Bistrita Nasaud'
+            Judet: 'Bistrita'
         }
         res.end(JSON.stringify(obj));
     }
@@ -246,7 +246,7 @@ var server = http.createServer(function (req, res) {
     if(req.url === '/SATUMARE'){
         res.writeHead(200,{'Content-type': 'application/json'});
         var obj = {
-            Judet: 'Satu-Mare'
+            Judet: 'SatuMare'
         }
         res.end(JSON.stringify(obj));
     }
@@ -372,12 +372,12 @@ var server = http.createServer(function (req, res) {
     }
 
     var criterii = ['educatie', 'varste', 'rata', 'medii']
-  var judete = ['IASI', ' IASI', 'BOTOSANI', ' BOTOSANI', 'BACAU', ' BACAU', 'VASLUI', ' VASLUI', 'GALATI', ' GALATI', 'TULCEA', ' TULCEA', 'CONSTANTA', ' CONSTANTA', 'IALOMITA', ' IALOMITA', 'BRAILA', ' BRAILA', 'VRANCEA', ' VRANCEA', 'NEAMT', ' NEAMT', 'SUCEAVA', ' SUCEAVA', 'BISTRITA', ' BISTRITA', 'MARAMURES', ' MARAMURES', 'MURES', ' MURES', 'HARGHITA', ' HARGHITA', 'COVASNA', ' COVASNA', 'BUZAU', ' BUZAU', 'PRAHOVA', ' PRAHOVA', 'ILFOV', 'DAMBOVITA', ' DAMBOVITA', 'BRASOV', ' BRASOV', 'GIURGIU', ' GIURGIU', 'TELEORMAN', ' TELEORMAN', 'OLT', ' OLT', 'DOLJ', ' DOLJ', 'ALBA', ' ALBA', 'MEHEDINTI', ' MEHEDINTI', 'VALCEA', ' VALCEA', 'ARGES', ' ARGES', 'SIBIU', ' SIBIU', 'CLUJ', ' CLUJ', 'SALAJ', ' SALAJ', 'BIHOR', ' BIHOR', 'ARAD', 'ARAD', 'TIMIS', ' TIMIS', 'CARAS', ' CARAS', 'HUNEDOARA', 'HUNEDOARA']
+  var judete = ['IASI', 'BOTOSANI', 'BACAU', 'VASLUI', 'GALATI', 'TULCEA', 'CONSTANTA', 'IALOMITA', 'BRAILA', 'VRANCEA', 'NEAMT', 'SUCEAVA',  'BISTRITA', 'MARAMURES', 'MURES',  'HARGHITA',  'COVASNA',  'BUZAU', 'PRAHOVA',  'ILFOV', 'DAMBOVITA', 'BRASOV', 'GIURGIU', 'TELEORMAN', 'OLT', 'DOLJ', 'ALBA',  'MEHEDINTI', 'VALCEA', 'ARGES', 'SIBIU', 'CLUJ', 'SALAJ', 'BIHOR', 'ARAD', 'TIMIS', 'CARAS',  'HUNEDOARA', 'BUCURESTI', 'CARAS', 'SATUMARE']
   for (var criteriu of criterii) {
     for (var judet of judete) {
       if (req.url === '/' + judet + '/' + criteriu) {
         res.writeHead(200, { 'Content-Type': 'application/json' })
-        var temp = 'SELECT * FROM educatie WHERE JUDET = ' + mysql.escape(judet)
+        var temp = 'SELECT * FROM ' + criteriu + ' WHERE JUDET = ' + mysql.escape(judet)
 
         connection.query(temp, (err, results, fields) => {
           if (err) throw err
@@ -388,56 +388,12 @@ var server = http.createServer(function (req, res) {
       }
     }
   }
-  for (criteriu of criterii) {
-    if (req.url === '/BUCURESTI/' + criteriu) {
-      res.writeHead(200, { 'Content-Type': 'application/json' })
-      var judet1 = 'BUCURESTI'
-      var judet2 = ' BUCURESTI'
-      var judet3 = 'MUN.BUC.'
-      var judet4 = 'Municipiul BUCURESTI'
-      var judet5 = 'MUNICIPIUL BUCURESTI'
-      var judet6 = 'MUN. BUC.'
-      var temp2 = 'SELECT * FROM educatie WHERE JUDET = ' + mysql.escape(judet1) + ' OR JUDET = ' + mysql.escape(judet2) + ' OR JUDET = ' + mysql.escape(judet3) + ' OR JUDET = ' + mysql.escape(judet4) + ' OR JUDET = ' + mysql.escape(judet5) + ' OR JUDET = ' + mysql.escape(judet6)
 
-      connection.query(temp2, (err, results, fields) => {
-        if (err) throw err
-        var test = JSON.stringify(results)
-        var rez = JSON.parse(test)
-        res.end(JSON.stringify(rez))
-      })
-    } else if (req.url === '/SATUMARE/' + criteriu) {
-      res.writeHead(200, { 'Content-Type': 'application/json' })
-      var judet8 = 'SATU MARE'
-      var judet9 = 'SATU M.'
-      var temp3 = 'SELECT * FROM educatie WHERE JUDET = ' + mysql.escape(judet8) + ' OR JUDET = ' + mysql.escape(judet9)
-
-      connection.query(temp3, (err, results, fields) => {
-        if (err) throw err
-        var test = JSON.stringify(results)
-        var rez = JSON.parse(test)
-        res.end(JSON.stringify(rez))
-      })
-    } else if (req.url === '/CARAS/educatie') {
-      res.writeHead(200, { 'Content-Type': 'application/json' })
-      var judet10 = ' CARAS-SEVERIN'
-      var judet11 = 'CARAS - SEVERIN'
-      var judet12 = 'CARAS'
-      var judet13 = ' CARAS'
-      var temp4 = 'SELECT * FROM educatie WHERE JUDET = ' + mysql.escape(judet10) + ' OR JUDET = ' + mysql.escape(judet11) + ' OR JUDET = ' + mysql.escape(judet12) + ' OR JUDET = ' + mysql.escape(judet13)
-
-      connection.query(temp4, (err, results, fields) => {
-        if (err) throw err
-        var test = JSON.stringify(results)
-        var rez = JSON.parse(test)
-        res.end(JSON.stringify(rez))
-      })
-    }
-  }
 
     if (req.url === '/Regiune/nordest') {
         res.writeHead(200, { 'Content-Type': 'application/json'});
-        var judete = ['IASI', 'VASLUI', 'BACAU', 'BOTOSANI', 'NEAMT', 'SUCEAVA', ' IASI', ' VASLUI', ' BACAU', ' BOTOSANI', ' NEAMT', ' SUCEAVA']
-        var temp = 'SELECT luna, an, NUMAR_TOTAL_SOMERI FROM medii WHERE JUDET = ' + mysql.escape(judete[0]) + ' OR JUDET = ' + mysql.escape(judete[1]) + ' OR JUDET = ' + mysql.escape(judete[2]) + ' OR JUDET = ' + mysql.escape(judete[3]) + ' OR JUDET = ' + mysql.escape(judete[4]) + ' OR JUDET = ' + mysql.escape(judete[5]) + ' OR JUDET = ' + mysql.escape(judete[6]) + ' OR JUDET = ' + mysql.escape(judete[7]) + ' OR JUDET = ' + mysql.escape(judete[8]) + ' OR JUDET = ' + mysql.escape(judete[9]) + ' OR JUDET = ' + mysql.escape(judete[10]) + ' OR JUDET = ' + mysql.escape(judete[11])
+        var judete = ['IASI', 'VASLUI', 'BACAU', 'BOTOSANI', 'NEAMT', 'SUCEAVA']
+        var temp = 'SELECT judet, luna, an, NUMAR_TOTAL_SOMERI FROM medii WHERE JUDET = ' + mysql.escape(judete[0]) + ' OR JUDET = ' + mysql.escape(judete[1]) + ' OR JUDET = ' + mysql.escape(judete[2]) + ' OR JUDET = ' + mysql.escape(judete[3]) + ' OR JUDET = ' + mysql.escape(judete[4]) + ' OR JUDET = ' + mysql.escape(judete[5]) + ' ORDER BY JUDET'
         
         connection.query(temp, (err, results, fields) => {
             if (err) throw err
@@ -450,9 +406,8 @@ var server = http.createServer(function (req, res) {
     
     if (req.url === '/Regiune/nordvest') {
         res.writeHead(200, { 'Content-Type': 'application/json'});
-        var judete = ['BIHOR', 'CLUJ', 'SALAJ', 'SATU MARE', 'MARAMURES', 'BISTRITA - NASAUD', ' BIHOR', ' CLUJ', ' SALAJ', ' SATU MARE', ' MARAMURES', ' BISTRITA-NASAUD']
-        var temp = 'SELECT luna, an, NUMAR_TOTAL_SOMERI FROM medii WHERE JUDET = ' + mysql.escape(judete[0]) + ' OR JUDET = ' + mysql.escape(judete[1]) + ' OR JUDET = ' + mysql.escape(judete[2]) + ' OR JUDET = ' + mysql.escape(judete[3]) + ' OR JUDET = ' + mysql.escape(judete[4]) + ' OR JUDET = ' + mysql.escape(judete[5]) + ' OR JUDET = ' + mysql.escape(judete[6]) + ' OR JUDET = ' + mysql.escape(judete[7]) + ' OR JUDET = ' + mysql.escape(judete[8]) + ' OR JUDET = ' + mysql.escape(judete[9]) + ' OR JUDET = ' + mysql.escape(judete[10]) + ' OR JUDET = ' + mysql.escape(judete[11])
-        
+        var judete = ['BIHOR', 'CLUJ', 'SALAJ', 'SATUMARE', 'MARAMURES', 'BISTRITA']
+        var temp = 'SELECT judet, luna, an, NUMAR_TOTAL_SOMERI FROM medii WHERE JUDET = ' + mysql.escape(judete[0]) + ' OR JUDET = ' + mysql.escape(judete[1]) + ' OR JUDET = ' + mysql.escape(judete[2]) + ' OR JUDET = ' + mysql.escape(judete[3]) + ' OR JUDET = ' + mysql.escape(judete[4]) + ' OR JUDET = ' + mysql.escape(judete[5]) + ' OR JUDET = ' + mysql.escape(judete[6]) + ' ORDER BY JUDET'
         connection.query(temp, (err, results, fields) => {
             if (err) throw err
             var test = JSON.stringify(results)
@@ -464,8 +419,8 @@ var server = http.createServer(function (req, res) {
 
     if (req.url === '/Regiune/bucilfov') {
         res.writeHead(200, { 'Content-Type': 'application/json'});
-        var judete = ['BUCURESTI', 'ILFOV', ' ILFOV']
-        var temp = 'SELECT luna, an, NUMAR_TOTAL_SOMERI FROM medii WHERE JUDET = ' + mysql.escape(judete[0]) + ' OR JUDET = ' + mysql.escape(judete[1]) + ' OR JUDET = ' + mysql.escape(judete[2]);
+        var judete = ['BUCURESTI', 'ILFOV']
+        var temp = 'SELECT judet, luna, an, NUMAR_TOTAL_SOMERI FROM medii WHERE JUDET = ' + mysql.escape(judete[0]) + ' OR JUDET = ' + mysql.escape(judete[1]) + ' ORDER BY JUDET'
         connection.query(temp, (err, results, fields) => {
             if (err) throw err
             var test = JSON.stringify(results)
@@ -477,8 +432,8 @@ var server = http.createServer(function (req, res) {
     
     if (req.url === '/Regiune/centru') {
         res.writeHead(200, { 'Content-Type': 'application/json'});
-        var judete = ['ALBA', 'BRASOV', 'COVASNA', 'HARGHITA', 'MURES', 'SIBIU', ' ALBA', ' BRASOV', ' COVASNA', ' HARGHITA', ' MURES', ' SIBIU']
-        var temp = 'SELECT luna, an, NUMAR_TOTAL_SOMERI FROM medii WHERE JUDET = ' + mysql.escape(judete[0]) + ' OR JUDET = ' + mysql.escape(judete[1]) + ' OR JUDET = ' + mysql.escape(judete[2]) + ' OR JUDET = ' + mysql.escape(judete[3]) + ' OR JUDET = ' + mysql.escape(judete[4]) + ' OR JUDET = ' + mysql.escape(judete[5]) + ' OR JUDET = ' + mysql.escape(judete[6]) + ' OR JUDET = ' + mysql.escape(judete[7]) + ' OR JUDET = ' + mysql.escape(judete[8]) + ' OR JUDET = ' + mysql.escape(judete[9]) + ' OR JUDET = ' + mysql.escape(judete[10]) + ' OR JUDET = ' + mysql.escape(judete[11])
+        var judete = ['ALBA', 'BRASOV', 'COVASNA', 'HARGHITA', 'MURES', 'SIBIU']
+        var temp = 'SELECT judet, luna, an, NUMAR_TOTAL_SOMERI FROM medii WHERE JUDET = ' + mysql.escape(judete[0]) + ' OR JUDET = ' + mysql.escape(judete[1]) + ' OR JUDET = ' + mysql.escape(judete[2]) + ' OR JUDET = ' + mysql.escape(judete[3]) + ' OR JUDET = ' + mysql.escape(judete[4]) + ' OR JUDET = ' + mysql.escape(judete[5]) + '  ORDER BY JUDET'
         
         connection.query(temp, (err, results, fields) => {
             if (err) throw err
@@ -491,8 +446,8 @@ var server = http.createServer(function (req, res) {
     
     if (req.url === '/Regiune/vest') {
         res.writeHead(200, { 'Content-Type': 'application/json'});
-        var judete = ['ARAD', 'CARAS-SEVERIN', 'HUNEDOARA', 'TIMIS', ' ARAD', ' CARAS', ' HUNEDOARA', ' TIMIS', ' CARAS-SEVERIN', 'CARAS - SEVERIN']
-        var temp = 'SELECT luna, an, NUMAR_TOTAL_SOMERI FROM medii WHERE JUDET = ' + mysql.escape(judete[0]) + ' OR JUDET = ' + mysql.escape(judete[1]) + ' OR JUDET = ' + mysql.escape(judete[2]) + ' OR JUDET = ' + mysql.escape(judete[3]) + ' OR JUDET = ' + mysql.escape(judete[4]) + ' OR JUDET = ' + mysql.escape(judete[5]) + ' OR JUDET = ' + mysql.escape(judete[6]) + ' OR JUDET = ' + mysql.escape(judete[7]) + ' OR JUDET = ' + mysql.escape(judete[8]) + ' OR JUDET = ' + mysql.escape(judete[9])
+        var judete = ['ARAD', 'CARAS-SEVERIN', 'HUNEDOARA', 'TIMIS']
+       var temp = 'SELECT judet, luna, an, NUMAR_TOTAL_SOMERI FROM medii WHERE JUDET = ' + mysql.escape(judete[0]) + ' OR JUDET = ' + mysql.escape(judete[1]) + ' OR JUDET = ' + mysql.escape(judete[2]) + ' OR JUDET = ' + mysql.escape(judete[3]) + ' ORDER BY JUDET'
         
         connection.query(temp, (err, results, fields) => {
             if (err) throw err
@@ -505,9 +460,8 @@ var server = http.createServer(function (req, res) {
     
     if (req.url === '/Regiune/sudvest') {
         res.writeHead(200, { 'Content-Type': 'application/json'});
-        var judete = ['DOLJ', 'GORJ', 'MEHEDINTI', 'OLT', 'VALCEA', ' DOLJ', ' GORJ', ' MEHEDINTI', ' OLT', ' VALCEA']
-        var temp = 'SELECT luna, an, NUMAR_TOTAL_SOMERI FROM medii WHERE JUDET = ' + mysql.escape(judete[0]) + ' OR JUDET = ' + mysql.escape(judete[1]) + ' OR JUDET = ' + mysql.escape(judete[2]) + ' OR JUDET = ' + mysql.escape(judete[3]) + ' OR JUDET = ' + mysql.escape(judete[4]) + ' OR JUDET = ' + mysql.escape(judete[5]) + ' OR JUDET = ' + mysql.escape(judete[6]) + ' OR JUDET = ' + mysql.escape(judete[7]) + ' OR JUDET = ' + mysql.escape(judete[8]) + ' OR JUDET = ' + mysql.escape(judete[9])
-        
+        var judete = ['DOLJ', 'GORJ', 'MEHEDINTI', 'OLT', 'VALCEA']
+        var temp = 'SELECT judet, luna, an, NUMAR_TOTAL_SOMERI FROM medii WHERE JUDET = ' + mysql.escape(judete[0]) + ' OR JUDET = ' + mysql.escape(judete[1]) + ' OR JUDET = ' + mysql.escape(judete[2]) + ' OR JUDET = ' + mysql.escape(judete[3]) + ' OR JUDET = ' + mysql.escape(judete[4]) + ' ORDER BY JUDET'
         connection.query(temp, (err, results, fields) => {
             if (err) throw err
             var test = JSON.stringify(results)
@@ -519,8 +473,8 @@ var server = http.createServer(function (req, res) {
     
     if (req.url === '/Regiune/sud') {
         res.writeHead(200, { 'Content-Type': 'application/json'});
-        var judete = ['ARGES', 'CALARASI', 'DAMBOVITA', 'GIURGIU', 'IALOMITA', 'PRAHOVA', 'TELEORMAN', ' ARGES', ' CALARASI', ' DAMBOVITA', ' GIURGIU', ' IALOMITA', ' PRAHOVA', ' TELEORMAN']
-        var temp = 'SELECT luna, an, NUMAR_TOTAL_SOMERI FROM medii WHERE JUDET = ' + mysql.escape(judete[0]) + ' OR JUDET = ' + mysql.escape(judete[1]) + ' OR JUDET = ' + mysql.escape(judete[2]) + ' OR JUDET = ' + mysql.escape(judete[3]) + ' OR JUDET = ' + mysql.escape(judete[4]) + ' OR JUDET = ' + mysql.escape(judete[5]) + ' OR JUDET = ' + mysql.escape(judete[6]) + ' OR JUDET = ' + mysql.escape(judete[7]) + ' OR JUDET = ' + mysql.escape(judete[8]) + ' OR JUDET = ' + mysql.escape(judete[9]) + ' OR JUDET = ' + mysql.escape(judete[10]) + ' OR JUDET = ' + mysql.escape(judete[11]) + ' OR JUDET = ' + mysql.escape(judete[12]) + ' OR JUDET = ' + mysql.escape(judete[13])
+        var judete = ['ARGES', 'CALARASI', 'DAMBOVITA', 'GIURGIU', 'IALOMITA', 'PRAHOVA', 'TELEORMAN']
+        var temp = 'SELECT judet, luna, an, NUMAR_TOTAL_SOMERI FROM medii WHERE JUDET = ' + mysql.escape(judete[0]) + ' OR JUDET = ' + mysql.escape(judete[1]) + ' OR JUDET = ' + mysql.escape(judete[2]) + ' OR JUDET = ' + mysql.escape(judete[3]) + ' OR JUDET = ' + mysql.escape(judete[4]) + ' OR JUDET = ' + mysql.escape(judete[5]) + ' OR JUDET = ' + mysql.escape(judete[6]) + ' ORDER BY JUDET'
         
         connection.query(temp, (err, results, fields) => {
             if (err) throw err
@@ -533,8 +487,8 @@ var server = http.createServer(function (req, res) {
     
     if (req.url === '/Regiune/sudest') {
         res.writeHead(200, { 'Content-Type': 'application/json'});
-        var judete = ['BRAILA', 'BUZAU', 'CONSTANTA', 'GALATI', 'TULCEA', 'VRANCEA', ' BRAILA', ' BUZAU', ' CONSTANTA', ' GALATI', ' TULCEA', ' VRANCEA']
-        var temp = 'SELECT judet, luna, an, NUMAR_TOTAL_SOMERI FROM medii WHERE JUDET = ' + mysql.escape(judete[0]) + ' OR JUDET = ' + mysql.escape(judete[1]) + ' OR JUDET = ' + mysql.escape(judete[2]) + ' OR JUDET = ' + mysql.escape(judete[3]) + ' OR JUDET = ' + mysql.escape(judete[4]) + ' OR JUDET = ' + mysql.escape(judete[5]) + ' OR JUDET = ' + mysql.escape(judete[6]) + ' OR JUDET = ' + mysql.escape(judete[7]) + ' OR JUDET = ' + mysql.escape(judete[8]) + ' OR JUDET = ' + mysql.escape(judete[9]) + ' OR JUDET = ' + mysql.escape(judete[10]) + ' OR JUDET = ' + mysql.escape(judete[11]) + ' ORDER BY luna'
+        var judete = ['BRAILA', 'BUZAU', 'CONSTANTA', 'GALATI', 'TULCEA', 'VRANCEA']
+        var temp = 'SELECT judet, luna, an, NUMAR_TOTAL_SOMERI FROM medii WHERE JUDET = ' + mysql.escape(judete[0]) + ' OR JUDET = ' + mysql.escape(judete[1]) + ' OR JUDET = ' + mysql.escape(judete[2]) + ' OR JUDET = ' + mysql.escape(judete[3]) + ' OR JUDET = ' + mysql.escape(judete[4]) + ' OR JUDET = ' + mysql.escape(judete[5]) + ' ORDER BY JUDET'
         
         connection.query(temp, (err, results, fields) => {
             if (err) throw err

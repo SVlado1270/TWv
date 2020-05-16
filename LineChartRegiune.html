@@ -1,0 +1,103 @@
+<!-- line chart pentru regiune :)-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Pie Chart</title>
+    <script src="https://cdn.anychart.com/js/8.0.1/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <canvas id="chart" width="700px" height="600px"></canvas>
+    </div>
+    <script>
+        tip = sessionStorage.getItem('tip');
+        var url = 'https://vvv1270.azurewebsites.net/' + 'Regiune' + '/' + sessionStorage.getItem('regiune');
+        console.log(url)
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var temp = []
+                var rez = []
+                var counter = 1; // cate 10 luni pe judet
+                var json = JSON.parse(this.response);
+                for (var i = 0; i < json.length; i++) {
+                    if (counter % 10) {
+                        temp.push(json[i])
+                    }
+                    else {
+                        temp.push(json[i])
+                        rez.push(temp)
+                        temp = []
+                    }
+                    counter++
+                }
+                var total = []
+                for (var i = 0; i < rez.length; i++) {
+                    var temp_result = 0;
+                    for (var j = 0; j < rez[i].length; j++) {
+                        temp_result += rez[i][j].NUMAR_TOTAL_SOMERI
+
+                    }
+                    total.push(temp_result / 10)
+                }
+                var JUDETE = []
+                for(var i = 0; i < rez.length; i++)
+                    JUDETE.push(rez[i][0].judet)
+
+                var ctx = document.getElementById('chart').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: JUDETE,
+                        datasets: [{
+                            label: 'Medie total someri 2019',
+                            data: total,
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }
+                        ]
+                    },
+                    options: {
+                        legend: {
+                            labels: {
+                                generateLabels: function (chart) {
+                                    labels = Chart.defaults.global.legend.labels.generateLabels(chart);
+                                    labels[0].fillStyle = 'rgba(255, 99, 132, 0.2)';
+                                    labels[0].strokeStyle = 'rgba(255, 99, 132, 0.2)';
+                                    return labels;
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
+    </script>
+</body>
+
+</html>

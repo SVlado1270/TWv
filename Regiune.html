@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="regiune.css">
     <script src="selectieJudete.js"></script>
+    <script src="export_scripts.js"></script>
     <title>Regiunea Moldova</title>
 </head>
 
@@ -16,19 +17,28 @@
         </div>
 
         <div class="map-content">
-            <img src="./misc/Nord-Est.svg" alt="Regiunea NE" class="reg_prop" />
+            <img id="img_reg" src="./misc/Nord-Est.svg" alt="Regiunea NE" class="reg_prop" />
         </div>
 
         <div class="chart-content">
             <div id="pie_legend" class="pie_position">
-                <h2>Vizualizare statistici</h2>
+                <h2 style="margin-top: 1vh; margin-bottom: 5vh;">Vizualizare statistici</h2>
                 <ul>
                     <!--procentele nu sunt supported de HTML5, desi pt noi vor functiona-->
-                    <li><object width="800px" height="350px" data="./BarChart.html"></object></li>
-                    <li><object width="800px" height="350px" data="./LineChart.html"></object></li>
-                    <li><object width="800px" height="350px" data="./RadarChart.html"></object></li>
-                    <li><object width="800px" height="350px" data="./LineChart.html"></object></li>
+                    <button id="csv" onclick="get_csv_regiune()">DOWNLOAD CSV</button>
+                    <button id="xml" onclick="get_xml_regiune()">DOWNLOAD XML</button>
+                    <button id="pdf" onclick="get_pdf_regiune()">DOWNLOAD PDF</button>
+                    <li><object id="bar"width="600px" height="700px" data="./BarChart.html"></object></li>
+                    <li><object id="line" width="600px" height="700px" data="./LineChart.html"></object></li>
+                    <li><object id="radar" width="600px" height="700px" data="./RadarChart.html"></object></li>
                 </ul>
+
+                <script>
+                    console.log(sessionStorage.getItem('regiune'))
+                    document.getElementById('bar').setAttribute('data', "./BarChartRegiune.html");
+                    document.getElementById('line').setAttribute('data', "./LineChartRegiune.html");
+                    document.getElementById('radar').setAttribute('data', "./RadarChartRegiune.html");
+                </script>
             </div>
         </div>
         <div class="sidebar" style="background-color: #8c7ce92a;">
@@ -54,6 +64,7 @@
                             if (sessionStorage.getItem('regiune') === 'nordest') {
                                 document.getElementsByClassName("reg_prop")[0].src = "./misc/Nord-Est.svg";
                                 document.getElementById("nume_r").innerHTML = "Regiunea Nord-Est";
+                                document.getElementById("img_reg").src = "./misc/Nord-Est.svg"
                                 document.getElementsByClassName("jud_comp")[0].id = "jud_iasi";
                                 document.getElementsByClassName("jud_comp")[0].innerHTML = "Iasi";
                                 document.getElementsByClassName("jud_comp")[1].id = "jud_bacau";
@@ -75,6 +86,7 @@
                             if (sessionStorage.getItem('regiune') === 'centru') {
                                 document.getElementsByClassName("reg_prop")[0].src = "./misc/Centru.svg";
                                 document.getElementById("nume_r").innerHTML = "Regiunea Centru";
+                                document.getElementById("img_reg").src = "./misc/Centru.svg"
                                 document.getElementsByClassName("jud_comp")[0].id = "jud_alba";
                                 document.getElementsByClassName("jud_comp")[0].innerHTML = "Alba";
                                 document.getElementsByClassName("jud_comp")[1].id = "jud_brasov";
@@ -96,6 +108,7 @@
                             if (sessionStorage.getItem('regiune') === 'sudest') {
                                 document.getElementsByClassName("reg_prop")[0].src = "./misc/Sud-Est.svg";
                                 document.getElementById("nume_r").innerHTML = "Regiunea Sud-Est";
+                                document.getElementById("img_reg").src = "./misc/Sud-Est.svg"
                                 document.getElementsByClassName("jud_comp")[0].id = "jud_braila";
                                 document.getElementsByClassName("jud_comp")[0].innerHTML = "Braila";
                                 document.getElementsByClassName("jud_comp")[1].id = "jud_buzau";
@@ -117,6 +130,7 @@
                             if (sessionStorage.getItem('regiune') === 'sud') {
                                 document.getElementsByClassName("reg_prop")[0].src = "./misc/Sud-Muntenia.svg";
                                 document.getElementById("nume_r").innerHTML = "Regiunea Sud-Muntenia";
+                                document.getElementById("img_reg").src = "./misc/Sud-Muntenia.svg"
                                 document.getElementsByClassName("jud_comp")[0].id = "jud_arges";
                                 document.getElementsByClassName("jud_comp")[0].innerHTML = "Arges";
                                 document.getElementsByClassName("jud_comp")[1].id = "jud_calarasi";
@@ -140,6 +154,7 @@
                             if (sessionStorage.getItem('regiune') === 'sudvest') {
                                 document.getElementsByClassName("reg_prop")[0].src = "./misc/Sud-Vest-Oltenia.svg";
                                 document.getElementById("nume_r").innerHTML = "Regiunea Sud-Vest-Oltenia";
+                                document.getElementById("img_reg").src = "./misc/Suv-Vest-Oltenia.svg"
                                 document.getElementsByClassName("jud_comp")[0].id = "jud_dolj";
                                 document.getElementsByClassName("jud_comp")[0].innerHTML = "";
                                 document.getElementsByClassName("jud_comp")[1].id = "jud_gorj";
@@ -159,6 +174,7 @@
                             if (sessionStorage.getItem('regiune') === 'vest') {
                                 document.getElementsByClassName("reg_prop")[0].src = "./misc/Vest.svg";
                                 document.getElementById("nume_r").innerHTML = "Regiunea Vest";
+                                document.getElementById("img_reg").src = "./misc/Vest.svg"
                                 document.getElementsByClassName("jud_comp")[0].id = "jud_arad";
                                 document.getElementsByClassName("jud_comp")[0].innerHTML = "Arad";
                                 document.getElementsByClassName("jud_comp")[1].id = "jud_caras_severin";
@@ -176,6 +192,7 @@
                             if (sessionStorage.getItem('regiune') === 'nordvest') {
                                 document.getElementsByClassName("reg_prop")[0].src = "./misc/Nord-Vest.svg";
                                 document.getElementById("nume_r").innerHTML = "Regiunea Nord-Vest";
+                                document.getElementById("img_reg").src = "./misc/Nord-Vest.svg"
                                 document.getElementsByClassName("jud_comp")[0].id = "jud_bihor";
                                 document.getElementsByClassName("jud_comp")[0].innerHTML = "Bihor";
                                 document.getElementsByClassName("jud_comp")[1].id = "jud_bistrita_nasaud";
@@ -197,6 +214,7 @@
                             if (sessionStorage.getItem('regiune') === 'bucilfov') {
                                 document.getElementsByClassName("reg_prop")[0].src = "./misc/Bucuresti-Ilfov.svg";
                                 document.getElementById("nume_r").innerHTML = "Regiunea Bucuresti-Ilfov";
+                                document.getElementById("img_reg").src = "./misc/Bucuresti-Ilfov.svg"
                                 document.getElementsByClassName("jud_comp")[0].id = "jud_bucuresti";
                                 document.getElementsByClassName("jud_comp")[0].innerHTML = "Bucuresti";
                                 document.getElementsByClassName("jud_comp")[1].id = "jud_ilfov";

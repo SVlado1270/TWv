@@ -7,6 +7,7 @@
     <meta http-equiv="Cache-control" content="no-cache">
     <link rel="stylesheet" type="text/css" href="Judet.css">
     <script src="incercare.js"></script>
+    <script src="export_scripts.js"></script>
     <title>Judet</title>
 </head>
 
@@ -126,7 +127,7 @@
                     document.getElementsByClassName("jud_prop")[0].src = "./misc/Maramures.svg"
                     document.getElementById("nume_j").innerHTML = "Judetul Maramures"
                 }
-                if (sessionStorage.getItem('judet') === 'Satu-Mare') {
+                if (sessionStorage.getItem('judet') === 'SatuMare') {
                     document.getElementsByClassName("jud_prop")[0].src = "./misc/SatuMare.svg"
                     document.getElementById("nume_j").innerHTML = "Judetul Satu-Mare"
                 }
@@ -206,6 +207,8 @@
                         <button id="educatie" onclick="set_educatie()">Educatie</button>
                         <button id="medii" onclick="set_medii()">Medii</button>
                         <button id="rata" onclick="set_rata()">Rata</button>
+                        <button id="csv" onclick="get_csv_judet()">DOWNLOAD CSV</button>
+                        <button id="xml" onclick="get_xml_judet()">DOWNLOAD XML</button>
                         <h2 style="margin-top: 7vh;">BarChart</h2>
                         <object id="bar" width="600px" height="700px" data="./BarChart.html"></object>
                     </li>
