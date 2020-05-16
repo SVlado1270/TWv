@@ -1,4 +1,4 @@
-body{
+body {
     /*background-color:  rgb(230, 222, 210);*/
     background-color: #fff3f3;
 }
@@ -28,7 +28,7 @@ body{
     justify-content: center;
 }
 
-.chart-content{
+.chart-content {
     grid-area: charts;
     grid-column: 5/9;
     grid-row: 2/8;
@@ -48,15 +48,14 @@ body{
     grid-auto-rows: auto;
     grid-template-areas: "hd" "map charts sb";
     border-radius: 3px;
-    background-color:#fff3f3;
+    background-color: #fff3f3;
     width: 98vw;
     height: 96vh;
     margin: 0 auto;
     grid-gap: 10px;
 }
 
-
-.wrapper > div {
+.wrapper>div {
     border-radius: 6px;
     background-color: #8c75de46;
     padding: 1em;
@@ -64,7 +63,7 @@ body{
     float: left;
 }
 
-h1{
+h1 {
     font-family: serif;
     text-align: center;
     margin-top: 5vh;
@@ -73,7 +72,7 @@ h1{
     font-size: 5vh;
 }
 
-h2{
+h2 {
     font-family: serif;
     text-align: center;
     letter-spacing: 6px;
@@ -81,9 +80,12 @@ h2{
     position: center;
     margin-top: 1vh;
     margin-bottom: 2vh;
-  }
+}
 
-.jud_prop {
+
+/*jud_prop*/
+
+.reg_prop {
     grid-area: map;
     align-self: center;
     width: 75%;
@@ -99,7 +101,8 @@ h2{
     box-shadow: 0 0 2px 1px rgba(7, 103, 134, 0.5);
 }
 
-.reg_prop {
+
+/*.reg_prop {
     grid-area: sb;
     width: 8vw;
     height: auto;
@@ -108,7 +111,7 @@ h2{
     border-radius: 1px;
     padding: 0;
     margin-top: 30px;
-}
+}*/
 
 .tara_prop {
     grid-area: sb;
@@ -118,38 +121,38 @@ h2{
     left: 80vw;
 }
 
-.tara_sb{
+.tara_sb {
     display: block;
     grid-area: sb;
     width: 8vw;
     height: auto;
     top: 14vh;
-    left: 84vw;  
-    border-radius: 1px; 
+    left: 84vw;
+    border-radius: 1px;
     filter: grayscale(95%);
     padding: 0;
     margin-top: 30px;
-  }
+}
 
-.pie_position{
+.pie_position {
     position: absolute;
     top: 0px;
     bottom: 0;
     left: 0;
     right: -17px;
-    overflow-y: scroll;  
+    overflow-y: scroll;
     overflow-x: hidden;
     align-self: center;
     margin-left: 4vw;
     margin-top: 30px;
-  }
-
-li{
-  margin-bottom: 105px;
 }
 
-li:first-child{
-  margin-top: 30px;
+li {
+    margin-bottom: 105px;
+}
+
+li:first-child {
+    margin-top: 30px;
 }
 
 ul {
@@ -267,103 +270,81 @@ ul {
     display: block;
 }
 
-@media only screen and (min-width: 350px) and (max-width: 700px) and (orientation : landscape) {
+@media only screen and (min-width: 350px) and (max-width: 700px) and (orientation: landscape) {
     .tara_prop {
         margin-top: 5vh;
         margin-left: 6vw;
         width: 80%;
     }
-
-    .header{
-      grid-area: hd;
-      grid-column: 2/9;
-      grid-row: 1/1;
+    .header {
+        grid-area: hd;
+        grid-column: 2/9;
+        grid-row: 1/1;
     }
-
-    .map-content{
-     grid-area: map;
-     grid-column: 2/9;
-     grid-row: 2/6;
-     }
- 
-     .chart-content{
-         grid-area: charts;
-         grid-column: 2/9;
-         grid-row: 6/10;
-     }
- 
+    .map-content {
+        grid-area: map;
+        grid-column: 2/9;
+        grid-row: 2/6;
+    }
+    .chart-content {
+        grid-area: charts;
+        grid-column: 2/9;
+        grid-row: 6/10;
+    }
     .wrapper {
-     grid-template-areas:
-         "hd sb"
-         "map" 
-         "charts";
+        grid-template-areas: "hd sb" "map" "charts";
     }
-
-    .sidebar{
-      position: fixed;
-      grid-area: sb;
-      grid-column: 7/7;
-      right: -9px;
-  }
-  
-  .tara_sb{
-    width: 8vw;
+    .sidebar {
+        position: fixed;
+        grid-area: sb;
+        grid-column: 7/7;
+        right: -9px;
     }
-
+    .tara_sb {
+        width: 8vw;
+    }
     .imagine {
-    width: 8vw;
+        width: 8vw;
     }
- 
- }
+}
 
- @media only screen and (min-width: 350px) and (max-width: 700px) and (orientation : portrait) {
-  .tara_prop {
-      margin-top: 5vh;
-      margin-left: 6vw;
-      width: 80%;
-  }
-
-  .header{
-    grid-area: hd;
-    grid-column: 2/9;
-    grid-row: 1/1;
-  }
-
-  .map-content{
-   grid-area: map;
-   grid-column: 2/9;
-   grid-row: 2/6;
-   }
-
-   .chart-content{
-       grid-area: charts;
-       grid-column: 2/9;
-       grid-row: 6/10;
-   }
-
-  .wrapper {
-   grid-template-areas:
-       "hd sb"
-       "map" 
-       "charts";
+@media only screen and (min-width: 350px) and (max-width: 700px) and (orientation: portrait) {
+    .tara_prop {
+        margin-top: 5vh;
+        margin-left: 6vw;
+        width: 80%;
     }
-
-  .sidebar{
-    position: fixed;
-    grid-area: sb;
-    grid-column: 7/7;
-    right: -22px;
+    .header {
+        grid-area: hd;
+        grid-column: 2/9;
+        grid-row: 1/1;
     }
-
-    .tara_sb{
-    margin-left: -10px;
-    width: 8vw;
-    margin-top: -2px;
+    .map-content {
+        grid-area: map;
+        grid-column: 2/9;
+        grid-row: 2/6;
     }
-
+    .chart-content {
+        grid-area: charts;
+        grid-column: 2/9;
+        grid-row: 6/10;
+    }
+    .wrapper {
+        grid-template-areas: "hd sb" "map" "charts";
+    }
+    .sidebar {
+        position: fixed;
+        grid-area: sb;
+        grid-column: 7/7;
+        right: -22px;
+    }
+    .tara_sb {
+        margin-left: -10px;
+        width: 8vw;
+        margin-top: -2px;
+    }
     .imagine {
-    margin-left: -10px;
-    width: 8vw;
+        margin-left: -10px;
+        width: 8vw;
     }
-
 }
