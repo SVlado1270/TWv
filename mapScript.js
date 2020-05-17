@@ -56,8 +56,8 @@ map.addEventListener("load", function() {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
-                console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                console.log(json[0].Judet)
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'nordest');
                 location.replace("Judet.html");
             }
@@ -74,7 +74,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'centru');
                 location.replace("Judet.html");
             }
@@ -91,7 +91,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'vest');
                 location.replace("Judet.html");
             }
@@ -108,7 +108,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sud');
                 location.replace("Judet.html");
             }
@@ -125,7 +125,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'nordest');
                 location.replace("Judet.html");
             }
@@ -142,7 +142,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'nordvest');
                 location.replace("Judet.html");
             }
@@ -159,7 +159,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'nordvest');
                 location.replace("Judet.html");
             }
@@ -176,7 +176,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'nordest');
                 location.replace("Judet.html");
             }
@@ -193,7 +193,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'centru');
                 location.replace("Judet.html");
             }
@@ -210,7 +210,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sudest');
                 location.replace("Judet.html");
             }
@@ -227,7 +227,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'bucilfov');
                 location.replace("Judet.html");
             }
@@ -244,7 +244,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sudest');
                 location.replace("Judet.html");
             }
@@ -261,7 +261,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'vest');
                 location.replace("Judet.html");
             }
@@ -278,7 +278,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sud');
                 location.replace("Judet.html");
             }
@@ -295,7 +295,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'nordvest');
                 location.replace("Judet.html");
             }
@@ -312,7 +312,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sudest');
                 location.replace("Judet.html");
             }
@@ -329,7 +329,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'centru');
                 location.replace("Judet.html");
             }
@@ -346,7 +346,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sud');
                 location.replace("Judet.html");
             }
@@ -363,7 +363,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sudvest');
                 location.replace("Judet.html");
             }
@@ -380,7 +380,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sudest');
                 location.replace("Judet.html");
             }
@@ -397,7 +397,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sud');
                 location.replace("Judet.html");
             }
@@ -414,7 +414,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sudvest');
                 location.replace("Judet.html");
             }
@@ -431,7 +431,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'centru');
                 location.replace("Judet.html");
             }
@@ -448,7 +448,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'vest');
                 location.replace("Judet.html");
             }
@@ -465,7 +465,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sud');
                 location.replace("Judet.html");
             }
@@ -482,7 +482,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'bucilfov');
                 location.replace("Judet.html");
             }
@@ -499,7 +499,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'nordvest');
                 location.replace("Judet.html");
             }
@@ -510,13 +510,13 @@ map.addEventListener("load", function() {
 
     mehedinti.addEventListener("mousedown", function() {
         //alert('mehedinti')
-        var url = 'https://vvv1270.azurewebsites.net/MEHDINTI';
+        var url = 'https://vvv1270.azurewebsites.net/MEHEDINTI';
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sudvest');
                 location.replace("Judet.html");
             }
@@ -533,7 +533,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'centru');
                 location.replace("Judet.html");
             }
@@ -550,7 +550,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'nordest');
                 location.replace("Judet.html");
             }
@@ -567,7 +567,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sudvest');
                 location.replace("Judet.html");
             }
@@ -584,7 +584,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sud');
                 location.replace("Judet.html");
             }
@@ -601,7 +601,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'nordvest');
                 location.replace("Judet.html");
             }
@@ -618,7 +618,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'nordvest');
                 location.replace("Judet.html");
             }
@@ -635,7 +635,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'centru');
                 location.replace("Judet.html");
             }
@@ -652,7 +652,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'nordest');
                 location.replace("Judet.html");
             }
@@ -669,7 +669,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sud');
                 location.replace("Judet.html");
             }
@@ -686,7 +686,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'vest');
                 location.replace("Judet.html");
             }
@@ -703,7 +703,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sudest');
                 location.replace("Judet.html");
             }
@@ -720,7 +720,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'nordest');
                 location.replace("Judet.html");
             }
@@ -737,7 +737,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sudvest');
                 location.replace("Judet.html");
             }
@@ -754,7 +754,7 @@ map.addEventListener("load", function() {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.response);
                 console.log(json)
-                sessionStorage.setItem('judet', json.Judet);
+                sessionStorage.setItem('judet', json[0].Judet);
                 sessionStorage.setItem('regiune', 'sudest');
                 location.replace("Judet.html");
             }
