@@ -70,8 +70,23 @@ h1{
 h2{
     font-family: serif;
     text-align: center;
-    margin-top: 5vh;
+    margin-top: 15vh;
+    text-align: center;
     letter-spacing: 3px;
     color: rgba(36, 37, 102, 0.815);
-    font-size: 3vh; 
+    font-size: 3vh;
+    margin-left: -30vw;
+}
+
+button {
+    margin-left: 6vw;
+    width: auto;
+    font-size: 1.8vh;
+    color: whitesmoke;
+    height: 6vh;
+    background-color: rgba(28, 0, 128, 0.705);
+    border-color: rgb(212, 196, 212);
+}
+button:first-of-type{
+    margin-left: 10vw;
 }

@@ -22,14 +22,6 @@ body {
     vertical-align: center;
 }
 
-
-/*
-.chart-content{
-    grid-area: charts;
-    grid-column: 6/10;
-    grid-row: 2/8;
-}*/
-
 .dropdown-regiuni {
     grid-area: regiuni;
     grid-column: 6/10;
@@ -39,13 +31,14 @@ body {
 }
 
 .dropbtn {
-    background-color: #DDA0DD;
+    background-color: rgb(250, 118, 85);
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
     width: 100%;
     margin: 0;
+    border-radius: 7px;
 }
 
 .dropdown {
@@ -79,7 +72,8 @@ body {
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #BA55D3;
+    background-color: rgb(243, 215, 57);
+    color: rgba(0, 0, 0, 0.678);
 }
 
 .top_somaj {
@@ -104,10 +98,9 @@ select {
     outline: 0;
     box-shadow: none;
     border: 0 !important;
-    background: #DDA0DD;
+    background: rgba(236, 81, 54, 0.877);
     background-image: none;
 }
-
 
 /* Remove IE arrow */
 
@@ -124,18 +117,22 @@ select::-ms-expand {
     width: 20em;
     height: 3em;
     line-height: 3;
-    background: #DDA0DD;
+    background:rgba(248, 118, 58, 0.993);
     overflow: hidden;
     border-radius: .25em;
+    margin-left: 5px;
 }
 
 select {
     flex: 1;
     padding: 0 .5em;
-    color: #fff;
+    color: whitesmoke;
+    text-indent: 10%;
     cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vh;
+    
 }
-
 
 /* Arrow */
 
@@ -145,21 +142,22 @@ select {
     top: 0;
     right: 0;
     padding: 0 1em;
-    background: #DDA0DD;
+    background: rgba(236, 97, 33, 0.993);
     cursor: pointer;
     pointer-events: none;
     -webkit-transition: .25s all ease;
     -o-transition: .25s all ease;
     transition: .25s all ease;
     overflow: auto;
-    height: 100px;
+    height: 50px;
+    
 }
 
 
 /* Transition */
 
 .select:hover::after {
-    color: #f39c12;
+    color: rgba(248, 220, 96, 0.993);
 }
 
 * {
@@ -221,17 +219,54 @@ h1 {
         grid-column: 2/8;
         grid-row: 2/6;
     }
-    .chart-content {
-        grid-area: charts;
-        grid-column: 2/8;
-        grid-row: 6/10;
+    body {
+        overflow-x: hidden;
     }
     .wrapper {
-        grid-template-areas: "hd" "map" "charts";
+        grid-template-areas: 
+        "hd" 
+        "map" 
+        "regiuni"
+        "topuri"
+        "comparare";
+    }
+
+    .dropdown-regiuni {
+        grid-area: regiuni;
+        grid-column: 2/8;
+        grid-row: 6/8;
+        display: flex;
+        justify-content: center;
+    }
+
+    .top_somaj {
+        grid-area: topuri;
+        grid-column: 2/8;
+        grid-row: 8/14;
+    }
+    .comparare_judete {
+        grid-area: comparare;
+        grid-column: 2/8;
+        grid-row: 14/30;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 80px;
+    }
+    
+    select {
+    flex: 1;
+    padding: 0 .5em;
+    color: whitesmoke;
+    text-indent: 10%;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vh;
+    
     }
 }
 
-@media only screen and (min-width: 350px) and (max-width: 700px) and (orientation: portrait) {
+/*Adaptare telefoane + iPhone-uri + iPad-uri/tablete*/
+@media only screen and (min-width: 320px) and (max-width: 700px) and (orientation: portrait) {
     .tara_prop {
         margin-top: 7vh;
         margin-left: 6vw;
@@ -247,16 +282,51 @@ h1 {
         grid-column: 2/8;
         grid-row: 2/6;
     }
-    .chart-content {
-        grid-area: charts;
-        grid-column: 2/8;
-        grid-row: 6/10;
+    body {
+        overflow-x: hidden;
     }
     .wrapper {
-        grid-template-areas: "hd" "map" "charts";
+        grid-template-areas: 
+        "hd" 
+        "map" 
+        "regiuni"
+        "topuri"
+        "comparare";
+    }
+
+    .dropdown-regiuni {
+        grid-area: regiuni;
+        grid-column: 2/8;
+        grid-row: 6/8;
+        display: flex;
+        justify-content: center;
+    }
+
+    .top_somaj {
+        grid-area: topuri;
+        grid-column: 2/8;
+        grid-row: 8/14;
+    }
+    .comparare_judete {
+        grid-area: comparare;
+        grid-column: 2/8;
+        grid-row: 14/30;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 80px;
     }
 }
 
+/*not supported cross-browser but supported by Chrome*/
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar * {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(204, 67, 67, 0.123) !important;
+}
 
 /*adaptare format mediu PC*/
 
@@ -274,95 +344,40 @@ h1 {
         grid-column: 2/8;
         grid-row: 2/6;
     }
-    .chart-content {
-        grid-area: charts;
-        grid-column: 2/8;
-        grid-row: 6/10;
+
+    body {
+        overflow-x: hidden;
     }
     .wrapper {
-        grid-template-areas: "hd" "map" "charts";
+        grid-template-areas: 
+        "hd" 
+        "map" 
+        "regiuni"
+        "topuri"
+        "comparare";
     }
-}
 
+    .dropdown-regiuni {
+        grid-area: regiuni;
+        grid-column: 2/8;
+        grid-row: 6/8;
+        display: flex;
+        justify-content: center;
+    }
 
-/*adaptare iPhone-uri*/
+    .top_somaj {
+        grid-area: topuri;
+        grid-column: 2/8;
+        grid-row: 8/14;
+    }
 
-@media only screen and (min-width: 320px) and (max-width: 600px) and (orientation: landscape) {
-    .tara_prop {
-        margin-top: 5vh;
-        margin-left: 6vw;
-        width: 80%;
-    }
-    .header {
-        grid-area: hd;
+    .comparare_judete {
+        grid-area: comparare;
         grid-column: 2/8;
-        grid-row: 1/1;
-    }
-    .map-content {
-        grid-area: map;
-        grid-column: 2/8;
-        grid-row: 2/6;
-    }
-    .chart-content {
-        grid-area: charts;
-        grid-column: 2/8;
-        grid-row: 6/10;
-    }
-    .wrapper {
-        grid-template-areas: "hd" "map" "charts";
-    }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 600px) and (orientation: portrait) {
-    .tara_prop {
-        margin-top: 7vh;
-        margin-left: 6vw;
-        width: 80%;
-    }
-    .header {
-        grid-area: hd;
-        grid-column: 2/8;
-        grid-row: 1/1;
-    }
-    .map-content {
-        grid-area: map;
-        grid-column: 2/8;
-        grid-row: 2/6;
-    }
-    .chart-content {
-        grid-area: charts;
-        grid-column: 2/8;
-        grid-row: 6/10;
-    }
-    .wrapper {
-        grid-template-areas: "hd" "map" "charts";
-    }
-}
-
-
-/*iPhone X*/
-
-@media only screen and (min-width: 701px) and (max-width: 850px) {
-    #harta {
-        margin-top: 10vh;
-    }
-    .header {
-        grid-area: hd;
-        grid-column: 2/8;
-        grid-row: 1/1;
-    }
-    .map-content {
-        grid-area: map;
-        grid-column: 2/8;
-        grid-row: 2/6;
-    }
-    .chart-content {
-        grid-area: charts;
-        grid-column: 2/8;
-        grid-row: 6/10;
-    }
-    .wrapper {
-        grid-template-areas: "hd" "map" "charts";
+        grid-row: 14/30;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 80px;
     }
 }
 

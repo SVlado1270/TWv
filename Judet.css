@@ -136,24 +136,7 @@ h2{
     margin-top: 30px;
 }
 
-
-@keyframes fillup{
-    from{stroke-dasharray: 0 100;}
-    to{
-        stroke-dasharray: 5 100;
-    }
-}
-/* p{
-  font-family: 'Courier New', Courier, monospace;
-  text-align: center;
-  color: rgb(20, 86, 145);
-  margin-top: 30px;
-  font-weight: bolder;
-  font-size: 3vh;
-  margin-left: -30px;
-
-} */
-  .pie_position{
+.pie_position{
     position: absolute;
     top: 0px;
     bottom: 0;
@@ -164,7 +147,7 @@ h2{
     align-self: center;
     margin-left: 3vw;
     margin-top: 30px;
-  }
+}
 
 li{
   margin-bottom: -60px;
@@ -188,8 +171,8 @@ ul {
   width: 38vw;
 }
 
-
- @media only screen and (min-width: 350px) and (max-width: 790px){
+/* Adaptare pentru telefoane/rezolutii mici + iPhone-uri */
+ @media only screen and (min-width: 320px) and (max-width: 790px) {
   #bar{
     width: 78vw;
     height: 65vh;
@@ -241,20 +224,38 @@ ul {
     position: fixed;
     grid-area: sb;
     grid-column: 7/7;
-    right: -16px;
-}
-.wrapper {
-  grid-template-areas:
-      "hd sb"
-      "map" 
-      "charts";
- 
- grid-auto-rows: minmax(200px, max-content);
- overflow-x: hidden;
-}
+    right: -19px;
+  }
+  
+  .wrapper {
+    grid-template-areas:
+    "hd sb"
+    "map" 
+    "charts";
+    grid-auto-rows: minmax(200px, max-content);
+    overflow-x: hidden;
+  }
+
+  .reg_prop{
+    margin-left: -14px;
+  }
+
+  .tara_sb{
+    margin-left: -14px;
+  }
+
+  #topbutton{
+    margin-right: -4px;
+    width: 32px !important;
+    bottom: 18px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
 }
 
-
+/* Adaptare pentru ecrane medii/mari */
 @media only screen and (min-width: 790px) and (max-width: 1000px) {
   #bar{
     width: 75vw;
@@ -279,9 +280,10 @@ ul {
     margin-top: -10px;
   }
 
-h2{
-  margin-top: -5%;
-}
+  h2{
+    margin-top: -5%;
+  }
+
   .header{
     grid-area: hd;
     grid-column: 2/8;
@@ -311,37 +313,42 @@ h2{
     grid-area: sb;
     grid-column: 7/7;
     right: -16px;
-}
-.wrapper {
-  grid-template-areas:
-      "hd sb"
-      "map" 
-      "charts";
- 
- grid-auto-rows: minmax(200px, max-content);
- overflow-x: hidden;
-}
+  }
 
-::-webkit-scrollbar {
-  width: 20px;
-}
-::-webkit-scrollbar * {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(204, 67, 67, 0.1) !important;
-}
-.jud_prop{
-  width: 68%;
-  margin-top: 6vh;
-  margin-left: 7vw;
-}
-#topbutton{
-  margin-right: 10px;
-}
+  .wrapper {
+    grid-template-areas:
+        "hd sb"
+        "map" 
+        "charts";
+  
+  grid-auto-rows: minmax(200px, max-content);
+  overflow-x: hidden;
+  }
 
-}
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+  ::-webkit-scrollbar * {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(204, 67, 67, 0.1) !important;
+  }
 
+  .jud_prop{
+    width: 68%;
+    margin-top: 6vh;
+    margin-left: 7vw;
+  }
+
+  #topbutton{
+    margin-right: 10px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
 
 button{
   display: inline-block;
